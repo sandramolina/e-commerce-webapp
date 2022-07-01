@@ -5,6 +5,8 @@ client/node_modules
 #server/node_modules
 /.pnp
 .pnp.js
+.eslintrc.js
+.prettierrc.js
 
 # testing
 /coverage
