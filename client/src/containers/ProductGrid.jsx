@@ -1,9 +1,11 @@
 import React from 'react';
 
-import products from '../mock';
+import { useSelector } from 'react-redux';
+
 import Product from '../components/product/Product';
 
 const ProductGrid = () => {
+  const products = useSelector((state) => state.products);
   const productNodes = products.map((product) => (
     <Product product={product} key={product.id} />
   ));

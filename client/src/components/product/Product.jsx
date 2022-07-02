@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Product = ({ product }) => (
   <div>
-    <Card style={{ width: '8rem' }}>
+    <Card style={{ width: '10rem' }}>
       <Card.Img
         className='.img-fluid. max-width: 50%'
         variant='top'
