@@ -2,6 +2,7 @@ const products = [
   {
     id: 1,
     title: 'Super Bomb Lips',
+    stock: 5,
     price: {
       currencyUnit: {
         code: 'GBP',
@@ -41,6 +42,7 @@ const products = [
   {
     id: 2,
     title: 'Super Bomb Mascara',
+    stock: 550,
     price: {
       currencyUnit: {
         code: 'GBP',
@@ -80,6 +82,7 @@ const products = [
   {
     id: 3,
     title: 'Super Bomb Eyeshadow',
+    stock: 558,
     price: {
       currencyUnit: {
         code: 'GBP',
