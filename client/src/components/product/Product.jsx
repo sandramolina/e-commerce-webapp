@@ -7,6 +7,7 @@ const Product = ({ product }) => (
   <div>
     <Card style={{ width: '10rem' }}>
       <Card.Img
+        alt={`beautiful representation for the product ${product.title}`}
         className='.img-fluid. max-width: 50%'
         variant='top'
         src={product.image}
