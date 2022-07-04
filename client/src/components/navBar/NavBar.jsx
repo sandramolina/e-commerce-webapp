@@ -13,8 +13,6 @@ import {
 import '../../css/main.min.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
-// eslint-disable-next-line spaced-comment
-//import searchIcon from '../../images/icons/search.svg';
 
 function NavBar() {
   return (
@@ -23,8 +21,8 @@ function NavBar() {
         <Navbar.Brand href='#home'>
           <img
             src='/logo.png'
-            width='100'
-            height='50'
+            width='93'
+            height='26'
             className='d-inline-block align-top'
             alt='So fetch! makeup logo'
           />
