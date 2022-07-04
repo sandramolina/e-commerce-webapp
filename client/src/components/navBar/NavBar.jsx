@@ -41,17 +41,16 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href='#action1'>Home</Nav.Link>
-            <NavDropdown title='Link' id='navbarScrollingDropdown'>
-              <NavDropdown.Item href='#action3'>Action</NavDropdown.Item>
-              <NavDropdown.Item href='#action4'>
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='#action5'>
-                Something else here
-              </NavDropdown.Item>
+            <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
+              <NavDropdown.Item href='#eyes'>EYES</NavDropdown.Item>
+              <NavDropdown.Item href='#face'>FACE</NavDropdown.Item>
+              <NavDropdown.Item href='#lips'>LIPS</NavDropdown.Item>
+              <NavDropdown.Item href='#nails'>NAILS</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href='LE'>LIMITED EDITION</Nav.Link>
+            <Nav.Link href='WT'>WHAT&#39;S TRENDING</Nav.Link>
+            <Nav.Link href='F'>FAVOURITES</Nav.Link>
+            <Button variant='outline-success'>Sign in/Sign Up</Button>
           </Nav>
           <Form className='d-flex'>
             <FormControl
