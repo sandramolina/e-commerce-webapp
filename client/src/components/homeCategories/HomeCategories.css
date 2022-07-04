@@ -1,0 +1,8 @@
+.category-img {
+  width: 30%;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: row;
+}
