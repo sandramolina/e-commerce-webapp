@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 
 import '../../css/main.min.css';
+import './Product.css';
 
 const Product = ({ product }) => (
   <div>
@@ -20,7 +21,7 @@ const Product = ({ product }) => (
           {product.price.currencyUnit.symbol} {product.price.amount}
         </Card.Text>
         <Button variant='primary' size='sm'>
-          SHOP
+          <p className='shop-text'>SHOP</p>
         </Button>
       </Card.Body>
     </Card>
