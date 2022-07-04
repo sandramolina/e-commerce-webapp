@@ -5,7 +5,7 @@ import { Carousel } from 'react-bootstrap';
 function HomeCarousel() {
   return (
     <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={2500}>
         <img
           className='d-block w-100'
           src='https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB30008_FB5001_model_alt5.jpg?v=1656701883'
@@ -16,7 +16,7 @@ function HomeCarousel() {
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={500}>
+      <Carousel.Item interval={2500}>
         <img
           className='d-block w-100'
           src='https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB30008_FB5001_model_alt5.jpg?v=1656701883'
@@ -27,7 +27,7 @@ function HomeCarousel() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={500}>
+      <Carousel.Item interval={2500}>
         <img
           className='d-block w-100'
           src='https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB30008_FB5001_model_alt5.jpg?v=1656701883'
