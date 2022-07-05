@@ -24,7 +24,7 @@ function NavBar() {
     <>
       <Navbar bg='light' expand='lg' fixed='top'>
         <Container fluid>
-          <Navbar.Brand href='#home'>
+          <Navbar.Brand href='/'>
             <img
               src='/logo.png'
               width='93'
