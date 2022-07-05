@@ -1,31 +1,37 @@
 import React from 'react';
 
+import { useDispatch } from 'react-redux';
 import { Button, Card } from 'react-bootstrap';
 
 import '../../css/main.min.css';
 import './Product.css';
 
-const Product = ({ product }) => (
-  <div>
-    <Card style={{ width: '10rem' }}>
-      <Card.Img
-        alt={`beautiful representation for the product ${product.title}`}
-        className='.img-fluid. max-width: 50%'
-        variant='top'
-        src={product.image}
-      />
-      <Card.Body>
-        <Card.Title>{product.title}</Card.Title>
-        <Card.Text>Rating: {product.rating.averageRate}</Card.Text>
-        <Card.Text>
-          {product.price.currencyUnit.symbol} {product.price.amount}
-        </Card.Text>
-        <Button variant='primary' size='sm'>
-          <p className='shop-text'>SHOP</p>
-        </Button>
-      </Card.Body>
-    </Card>
-  </div>
-);
+const Product = ({ product }) => {
+  const dispatch = useDispatch();
+  const addToCart = () => dispatch(addToCart());
+
+  return (
+    <div>
+      <Card style={{ width: '10rem' }}>
+        <Card.Img
+          alt={`beautiful representation for the product ${product.title}`}
+          className='.img-fluid. max-width: 50%'
+          variant='top'
+          src={product.image}
+        />
+        <Card.Body>
+          <Card.Title>{product.title}</Card.Title>
+          <Card.Text>Rating: {product.rating.averageRate}</Card.Text>
+          <Card.Text>
+            {product.price.currencyUnit.symbol} {product.price.amount}
+          </Card.Text>
+          <Button variant='primary' size='sm' onClick={addToCart}>
+            <p className='shop-text'>SHOP</p>
+          </Button>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
 
 export default Product;

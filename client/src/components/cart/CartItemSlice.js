@@ -11,8 +11,8 @@ export const mockCartItemsSlice = createSlice({
     addItemToCart: ({ state }) => {
       mockCartItems = [...state.mockCartItems];
     },
-    removeItemFromCart: ({ state }) => {
-      mockCartItems = [...state.mockCartItems];
+    removeItemFromCart: (state) => {
+      state.mockCartItems.pop();
     },
   },
 });
