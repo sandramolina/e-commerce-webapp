@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Offcanvas, Button } from 'react-bootstrap';
+import { Offcanvas } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Cart from './Cart';
+import { closeCart } from './CartModalSlice';
 
 function CartModal() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const show = useSelector((state) => state.cartIsOpen.value);
+  const dispatch = useDispatch();
+  const handleClose = () => dispatch(closeCart());
   return (
     <>
-      <Button variant='primary' onClick={handleShow}>
-        Launch
-      </Button>
-
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>YOUR BAG</Offcanvas.Title>

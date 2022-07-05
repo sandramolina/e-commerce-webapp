@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { cartIsOpen: false };
+const initialState = { value: false };
 
 export const CartModaSlice = createSlice({
   name: 'cart',
@@ -8,11 +8,11 @@ export const CartModaSlice = createSlice({
   reducers: {
     closeCart: (state) => {
       const changeToOpen = state;
-      changeToOpen.cartIsOpen = false;
+      changeToOpen.value = false;
     },
     openCart: (state) => {
       const changeToOpen = state;
-      changeToOpen.cartIsOpen = true;
+      changeToOpen.value = true;
     },
   },
 });
