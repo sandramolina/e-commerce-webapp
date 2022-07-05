@@ -11,6 +11,7 @@ function Cart() {
   ));
   return (
     <ul>
+      <h4>{products.length} intems in the bag:</h4>
       <div>{productNodes} </div>
     </ul>
   );
