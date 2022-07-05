@@ -8,8 +8,8 @@ import {
   Nav,
   Form,
   FormControl,
+  NavDropdown,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 import '../../css/main.min.css';
 
@@ -49,15 +49,12 @@ function NavBar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Link to='/products'>
-                <p>PRODUCTS</p>
-              </Link>
-              {/* <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
-                  <NavDropdown.Item href='#eyes'>EYES</NavDropdown.Item>
-                  <NavDropdown.Item href='#face'>FACE</NavDropdown.Item>
-                  <NavDropdown.Item href='#lips'>LIPS</NavDropdown.Item>
-                  <NavDropdown.Item href='#nails'>NAILS</NavDropdown.Item>
-                </NavDropdown> */}
+              <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
+                <NavDropdown.Item href='/products'>ALL</NavDropdown.Item>
+                <NavDropdown.Item href='#face'>FACE</NavDropdown.Item>
+                <NavDropdown.Item href='#lips'>LIPS</NavDropdown.Item>
+                <NavDropdown.Item href='#nails'>NAILS</NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link href='WT'>WHAT&#39;S TRENDING</Nav.Link>
               <Nav.Link href='F'>FAVOURITES</Nav.Link>
               <Button variant='outline-success'>Sign in/Sign Up</Button>
