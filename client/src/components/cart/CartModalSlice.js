@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = { cartIsOpen: false };
@@ -8,10 +7,12 @@ export const CartModaSlice = createSlice({
   initialState,
   reducers: {
     closeCart: (state) => {
-      state.cartIsOpen = false;
+      const changeToOpen = state;
+      changeToOpen.cartIsOpen = false;
     },
     openCart: (state) => {
-      state.cartIsOpen = true;
+      const changeToOpen = state;
+      changeToOpen.cartIsOpen = true;
     },
   },
 });
