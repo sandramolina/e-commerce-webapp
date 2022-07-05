@@ -30,7 +30,7 @@ const products = [
     },
     productCategory: 'LIPS',
     image:
-      'https://raw.githubusercontent.com/sandramolina/rick-and-morty-app/main/public/not_found.png',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipBalm.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:

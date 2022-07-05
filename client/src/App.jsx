@@ -1,20 +1,28 @@
 import React from 'react';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import NavBar from './components/navBar/NavBar';
 import HomeCarousel from './components/homeCarousel/HomeCarousel';
 import CategoriesBox from './containers/CategoriesBox';
 import Footer from './components/footer/Footer';
 import CartModal from './components/cart/CartModal';
+import ProductGrid from './containers/ProductGrid';
 
 function App() {
   return (
     <div className='App'>
-      <NavBar />
-      <CartModal />
-      <HomeCarousel />
-      <CategoriesBox />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomeCarousel />} />
+          <Route path='products' element={<ProductGrid />} />
+        </Routes>
+        <NavBar />
+        <CartModal />
+        <CategoriesBox />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
