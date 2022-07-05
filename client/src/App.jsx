@@ -15,12 +15,19 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<HomeCarousel />} />
+          <Route
+            path='/'
+            element={
+              <>
+                <HomeCarousel />
+                <CategoriesBox />
+              </>
+            }
+          />
           <Route path='products' element={<ProductGrid />} />
         </Routes>
         <NavBar />
         <CartModal />
-        <CategoriesBox />
         <Footer />
       </BrowserRouter>
     </div>
