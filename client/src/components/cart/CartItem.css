@@ -1,0 +1,9 @@
+.cartItem-card {
+  width: 1rem;
+}
+.cartItem-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
