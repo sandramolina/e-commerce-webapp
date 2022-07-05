@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useDispatch } from 'react-redux';
 import {
   Button,
   Navbar,
@@ -13,8 +14,12 @@ import {
 import '../../css/main.min.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
+import { openCart } from '../cart/CartModalSlice';
 
 function NavBar() {
+  const dispatch = useDispatch();
+  const clickOnCart = () => dispatch(openCart());
+
   return (
     <Navbar bg='light' expand='lg' fixed='top'>
       <Container fluid>
@@ -28,11 +33,13 @@ function NavBar() {
           />
         </Navbar.Brand>
         <Nav>
-          <img
-            src={shoppingBag}
-            alt='Shopping cart'
-            className='shopping-bag d-flex'
-          />
+          <button onClick={clickOnCart} type='button'>
+            <img
+              src={shoppingBag}
+              alt='Shopping cart'
+              className='shopping-bag d-flex'
+            />
+          </button>
         </Nav>
         <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>
