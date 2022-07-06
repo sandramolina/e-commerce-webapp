@@ -30,7 +30,7 @@ const products = [
     },
     productCategory: 'LIPS',
     image:
-      'https://raw.githubusercontent.com/sandramolina/rick-and-morty-app/main/public/not_found.png',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipBalm.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
@@ -156,7 +156,7 @@ const products = [
     },
     productCategory: 'EYES',
     image:
-      'https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB_HOL2021_I_T2PRODUCT_CONCRETE_GLOSS_BOMB_HEAT_CLOSED_LAVENDER_SAVAGE_1200x1500_d9cf3fcb-3888-4bf9-8ce8-a333017a95cc.jpg?v=1646689585',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/mascara.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
