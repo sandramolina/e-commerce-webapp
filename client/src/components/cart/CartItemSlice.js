@@ -26,8 +26,13 @@ export const cartItemsSlice = createSlice({
       // eslint-disable-next-line
       state.items = filteredItems;
     },
+    clearCart: (state) => {
+      // eslint-disable-next-line
+      state.items = [];
+    },
   },
 });
 
-export const { addItemToCart, removeItemFromCart } = cartItemsSlice.actions;
+export const { addItemToCart, clearCart, removeItemFromCart } =
+  cartItemsSlice.actions;
 export default cartItemsSlice.reducer;
