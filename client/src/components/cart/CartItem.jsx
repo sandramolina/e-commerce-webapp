@@ -5,9 +5,11 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 
 import './CartItem.css';
 
+import { removeItemFromCart } from './CartItemSlice';
+
 const CartItem = ({ productInCart }) => {
   const dispatch = useDispatch();
-  const removeFromCart = () => dispatch(removeFromCart());
+  const remove = (e) => dispatch(removeItemFromCart(Number(e.target.value)));
   return (
     <>
       <Card>
@@ -39,7 +41,9 @@ const CartItem = ({ productInCart }) => {
                 </Button>
               </Col>
               <Col>
-                <Button onClick={removeFromCart}>Remove</Button>
+                <button onClick={remove} type='button' value={productInCart.id}>
+                  Remove
+                </button>
               </Col>
               <Col>£PXQ</Col>
             </Row>

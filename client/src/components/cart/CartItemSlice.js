@@ -18,8 +18,13 @@ export const cartItemsSlice = createSlice({
         arrayOfCartItems.push(action.payload);
       }
     },
-    removeItemFromCart: (state) => {
-      state.mockCartItems.pop();
+    removeItemFromCart: (state, action) => {
+      const arrayOfCartItems = state.items;
+      const filteredItems = arrayOfCartItems.filter(
+        (cartItem) => cartItem.id !== action.payload
+      );
+
+      state.items = filteredItems;
     },
   },
 });
