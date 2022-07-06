@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useDispatch } from 'react-redux';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+
+import { addItemToCart } from '../cart/CartItemSlice';
 
 import '../../css/main.min.css';
 import './Product.css';
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const addToCart = () => dispatch(addToCart());
+
+  const [count, setCount] = useState(0);
+
+  const handleCountSelection = (event) => setCount(event.target.value);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const itemCount = Number(count);
+
+    const itemCartObject = {
+      product,
+      count: itemCount,
+    };
+    dispatch(addItemToCart(itemCartObject));
+  };
 
   return (
     <div>
@@ -25,9 +41,17 @@ const Product = ({ product }) => {
           <Card.Text>
             {product.price.currencyUnit.symbol} {product.price.amount}
           </Card.Text>
-          <Button variant='primary' size='sm' onClick={addToCart}>
-            <p className='shop-text'>SHOP</p>
-          </Button>
+          <form onSubmit={handleFormSubmit}>
+            <select name='count' onChange={handleCountSelection}>
+              <option value='0' defaultValue>
+                -Chose a Status-
+              </option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+            </select>
+            <input type='submit' value='addToCart' />
+          </form>
         </Card.Body>
       </Card>
     </div>

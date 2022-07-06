@@ -1,15 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import mockCartItems from '../../mockCart';
+const items = [];
+const initialState = { items };
 
-const initialState = mockCartItems;
-
-export const mockCartItemsSlice = createSlice({
-  name: 'mockCartItems',
+export const cartItemsSlice = createSlice({
+  name: 'cart',
   initialState,
   reducers: {
-    addItemToCart: ({ state }) => {
-      mockCartItems = [...state.mockCartItems];
+    addItemToCart: (state, action) => {
+      state.items.push(action.payload);
     },
     removeItemFromCart: (state) => {
       state.mockCartItems.pop();
@@ -17,5 +16,5 @@ export const mockCartItemsSlice = createSlice({
   },
 });
 
-export const { addItemToCart, removeItemFromCart } = mockCartItemsSlice.actions;
-export default mockCartItemsSlice.reducer;
+export const { addItemToCart, removeItemFromCart } = cartItemsSlice.actions;
+export default cartItemsSlice.reducer;
