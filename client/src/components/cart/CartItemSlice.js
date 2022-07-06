@@ -23,11 +23,9 @@ export const cartItemsSlice = createSlice({
       const filteredItems = arrayOfCartItems.filter(
         (cartItem) => cartItem.id !== action.payload
       );
-      // eslint-disable-next-line
       state.items = filteredItems;
     },
     clearCart: (state) => {
-      // eslint-disable-next-line
       state.items = [];
     },
   },

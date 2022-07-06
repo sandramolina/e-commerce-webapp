@@ -7,12 +7,10 @@ export const CartModaSlice = createSlice({
   initialState,
   reducers: {
     closeCart: (state) => {
-      const changeToOpen = state;
-      changeToOpen.value = false;
+      state.value = false;
     },
     openCart: (state) => {
-      const changeToOpen = state;
-      changeToOpen.value = true;
+      state.value = true;
     },
   },
 });
