@@ -10,6 +10,7 @@ import {
   FormControl,
   NavDropdown,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import '../../css/main.min.css';
 
@@ -24,15 +25,17 @@ function NavBar() {
     <>
       <Navbar bg='light' expand='lg' fixed='top'>
         <Container fluid>
-          <Navbar.Brand href='/'>
-            <img
-              src='/logo.png'
-              width='93'
-              height='26'
-              className='d-inline-block align-top'
-              alt='So fetch! makeup logo'
-            />
-          </Navbar.Brand>
+          <Link to='/'>
+            <Navbar.Brand>
+              <img
+                src='/logo.png'
+                width='93'
+                height='26'
+                className='d-inline-block align-top'
+                alt='So fetch! makeup logo'
+              />
+            </Navbar.Brand>
+          </Link>
           <Nav>
             <button onClick={clickOnCart} type='button'>
               <img
@@ -50,7 +53,9 @@ function NavBar() {
               navbarScroll
             >
               <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
-                <NavDropdown.Item href='/products'>ALL</NavDropdown.Item>
+                <Link to='/products'>
+                  <p>ALL</p>
+                </Link>
                 <NavDropdown.Item href='#face'>FACE</NavDropdown.Item>
                 <NavDropdown.Item href='#lips'>LIPS</NavDropdown.Item>
                 <NavDropdown.Item href='#nails'>NAILS</NavDropdown.Item>
