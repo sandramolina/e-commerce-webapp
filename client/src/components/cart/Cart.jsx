@@ -11,7 +11,7 @@ function Cart() {
   ));
   return (
     <ul>
-      <h4>{productsInCart.length} intems in the bag:</h4>
+      <h4>{productsInCart.length} items in the bag:</h4>
       <div>{productsInCartNodes} </div>
     </ul>
   );

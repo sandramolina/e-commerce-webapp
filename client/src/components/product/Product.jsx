@@ -19,7 +19,9 @@ const Product = ({ product }) => {
     event.preventDefault();
     const itemCount = Number(count);
 
+    const id = Math.floor(Math.random() * 100 + 1);
     const itemCartObject = {
+      id,
       product,
       count: itemCount,
     };
@@ -44,7 +46,7 @@ const Product = ({ product }) => {
           <form onSubmit={handleFormSubmit}>
             <select name='count' onChange={handleCountSelection}>
               <option value='0' defaultValue>
-                -Chose a Status-
+                -Chose quantity-
               </option>
               <option value='1'>1</option>
               <option value='2'>2</option>

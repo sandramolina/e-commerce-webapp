@@ -143,4 +143,6 @@ const mockCartItems = [
   },
 ];
 
+//console.log(mockCartItems[0].count);
+
 export default mockCartItems;
