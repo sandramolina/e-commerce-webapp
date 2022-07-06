@@ -8,18 +8,14 @@ export const cartItemsSlice = createSlice({
   initialState,
   reducers: {
     addItemToCart: (state, action) => {
-      // const isProductInCart = state.items.filter(cartItem => cartItem.product === action.payload.product)
-      // const foundProductObject = state.items.find(cartItem => cartItem.product === action.payload.product)
-      // console.log(state.items);
-      console.log(action.payload.product);
-      const foundCartItemIndex = state.items.findIndex(
+      const arrayOfCartItems = state.items;
+      const foundCartItemIndex = arrayOfCartItems.findIndex(
         (cartItem) => cartItem.product.id === action.payload.product.id
       );
-      console.log(foundCartItemIndex);
       if (foundCartItemIndex !== -1) {
-        state.items[foundCartItemIndex].count += 1;
+        arrayOfCartItems[foundCartItemIndex].count += action.payload.count;
       } else {
-        state.items.push(action.payload);
+        arrayOfCartItems.push(action.payload);
       }
     },
     removeItemFromCart: (state) => {
