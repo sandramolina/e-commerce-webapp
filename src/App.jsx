@@ -25,6 +25,10 @@ function App() {
             }
           />
           <Route path='products' element={<ProductGrid />} />
+          <Route path='eyes' element={<ProductGrid />} />
+          <Route path='lips' element={<ProductGrid />} />
+          <Route path='face' element={<ProductGrid />} />
+          <Route path='nails' element={<ProductGrid />} />
         </Routes>
         <NavBar />
         <CartModal />
