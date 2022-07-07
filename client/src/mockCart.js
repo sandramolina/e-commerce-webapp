@@ -73,7 +73,7 @@ const mockCartItems = [
   {
     id: 2,
     product: {
-      id: 1,
+      id: 2,
       title: 'Super Lip Gloss',
       stock: 550,
       price: {
