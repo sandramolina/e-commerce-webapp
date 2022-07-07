@@ -9,6 +9,7 @@ import {
   Form,
   FormControl,
   NavDropdown,
+  NavItem,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -16,10 +17,13 @@ import '../../css/main.min.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
 import { openCart } from '../cart/CartModalSlice';
+import { displayAll } from '../product/ProductSlice';
 
 function NavBar() {
   const dispatch = useDispatch();
   const clickOnCart = () => dispatch(openCart());
+
+  const clickOnAll = () => dispatch(displayAll());
 
   return (
     <>
@@ -53,10 +57,17 @@ function NavBar() {
               navbarScroll
             >
               <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
-                <Link to='/products'>
-                  <p>ALL</p>
-                </Link>
-                <NavDropdown.Item href='#face'>FACE</NavDropdown.Item>
+                <NavItem href='/products'>
+                  <Nav.Link as={Link} to='/products' onClick={clickOnAll}>
+                    ALL
+                  </Nav.Link>
+                </NavItem>
+                <NavItem href='/products'>
+                  <Nav.Link as={Link} to='/products'>
+                    EYES
+                  </Nav.Link>
+                </NavItem>
+                <NavDropdown.Item>FACE</NavDropdown.Item>
                 <NavDropdown.Item href='#lips'>LIPS</NavDropdown.Item>
                 <NavDropdown.Item href='#nails'>NAILS</NavDropdown.Item>
               </NavDropdown>

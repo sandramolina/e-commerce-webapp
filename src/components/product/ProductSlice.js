@@ -8,6 +8,9 @@ export const productsSlice = createSlice({
   name: 'productsState',
   initialState,
   reducers: {
+    displayAll: (state) => {
+      state.products = products;
+    },
     filterByCategory: (state, action) => {
       const filteredProducts = products.filter(
         (product) => product.productCategory === action.payload
@@ -17,5 +20,5 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { filterByCategory } = productsSlice.actions;
+export const { displayAll, filterByCategory } = productsSlice.actions;
 export default productsSlice.reducer;

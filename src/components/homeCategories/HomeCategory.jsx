@@ -23,7 +23,7 @@ function HomeCategory({ category }) {
           src='https://wwd.com/wp-content/uploads/2021/12/best-makeup-kits.jpg?w=911'
         />
         <Card.Title>{category.title}</Card.Title>
-        <Link to='/eyes'>
+        <Link to='/products'>
           <Button
             variant='primary'
             size='sm'
