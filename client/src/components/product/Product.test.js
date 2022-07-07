@@ -10,8 +10,7 @@ import products from '../../mock';
 
 import Product from './Product';
 
-//This first test checks that the image is being rendered int he page
-describe('Product renders image information', () => {
+describe('Product component renders the right information about the product', () => {
   let product;
   const productObject = products[0];
 
@@ -23,9 +22,9 @@ describe('Product renders image information', () => {
     );
   });
 
-  it('should render product information on the page', () => {
+  //This first test checks that the image is being rendered in the page
+  it('should render product image on the page', () => {
     const image = product.getByRole('img');
-
     expect(image).toHaveAttribute(
       'src',
       'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipBalm.png'
