@@ -63,6 +63,7 @@ function NavBar() {
                   </Nav.Link>
                 </NavItem>
                 <NavItem href='/products'>
+                  {/* Missing on click */}
                   <Nav.Link as={Link} to='/products'>
                     EYES
                   </Nav.Link>
