@@ -7,7 +7,7 @@ import Product from '../components/product/Product';
 import './ProductGrid.css';
 
 const ProductGrid = () => {
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.productsState.products);
   const productNodes = products.map((product) => (
     <Product product={product} key={product.id} />
   ));

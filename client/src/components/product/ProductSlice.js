@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import products from '../../mock';
 
-const initialState = products;
+const initialState = { products };
 
 export const productsSlice = createSlice({
-  name: 'products',
+  name: 'productsState',
   initialState,
   reducers: {
     increment: ({ state }) => {
