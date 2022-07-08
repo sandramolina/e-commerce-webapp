@@ -10,15 +10,22 @@ import {
   FormControl,
   NavDropdown,
   NavItem,
+  Dropdown,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import Flag from 'react-flagkit';
 
 import '../../css/main.min.css';
+import './NavBar.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
+import globe from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
 import { displayAll, filterByCategory } from '../product/ProductSlice';
+
+import languages from './languages';
 
 function NavBar() {
   const dispatch = useDispatch();
@@ -36,6 +43,19 @@ function NavBar() {
 
   const { t } = useTranslation();
 
+  const languagesNodes = languages.map(({ code, countryCode, name }) => (
+    <Dropdown.Item
+      key={countryCode}
+      onClick={() => i18next.changeLanguage(code)}
+    >
+      <Flag
+        country={countryCode}
+        alt={`Flag of ${countryCode}`}
+        className='flag'
+      />
+      {name}
+    </Dropdown.Item>
+  ));
   return (
     <>
       <Navbar bg='light' expand='lg' fixed='top'>
@@ -52,14 +72,16 @@ function NavBar() {
             </Navbar.Brand>
           </Link>
           <Nav>
-            <button onClick={clickOnCart} type='button'>
-              <img
-                src={shoppingBag}
-                alt='Shopping cart'
-                className='shopping-bag d-flex'
-              />
+            <button onClick={clickOnCart} type='button' className='icons'>
+              <img src={shoppingBag} alt='Shopping cart' />
             </button>
           </Nav>
+          <Dropdown>
+            <Dropdown.Toggle id='dropdown-basic' className='icons'>
+              <img src={globe} alt='Globe Icon for language' />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
+          </Dropdown>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse id='navbarScroll'>
             <Nav

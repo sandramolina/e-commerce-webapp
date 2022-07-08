@@ -13,13 +13,13 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <React.StrictMode>
-    <Suspense fallback='Loading...'>
+  <Suspense fallback='Loading...'>
+    <React.StrictMode>
       <Provider store={store}>
         <App />
       </Provider>
-    </Suspense>
-  </React.StrictMode>
+    </React.StrictMode>
+  </Suspense>
 );
 
 // If you want to start measuring performance in your app, pass a function
