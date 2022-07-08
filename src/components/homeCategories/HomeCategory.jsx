@@ -3,12 +3,14 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { filterByCategory } from '../product/ProductSlice';
 
 import './HomeCategories.css';
 
 function HomeCategory({ category }) {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -23,7 +25,7 @@ function HomeCategory({ category }) {
           alt='Category avatar'
           src='https://wwd.com/wp-content/uploads/2021/12/best-makeup-kits.jpg?w=911'
         />
-        <Card.Title>{category.title}</Card.Title>
+        <Card.Title>{category.string}</Card.Title>
         <Link to={`/products/${category.title.toLowerCase()}`}>
           <Button
             variant='primary'
@@ -31,7 +33,7 @@ function HomeCategory({ category }) {
             type='submit'
             onClick={handleClick}
           >
-            <p className='shop-text'>SHOP</p>
+            <p className='shop-text'>{t('shop')}</p>
           </Button>
         </Link>
       </Card>
