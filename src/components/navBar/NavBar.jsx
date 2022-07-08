@@ -21,7 +21,7 @@ import '../../css/main.min.css';
 import './NavBar.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
-import globe from '../../images/icons/globe.svg';
+import { ReactComponent as Globe } from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
 import { displayAll, filterByCategory } from '../product/ProductSlice';
 
@@ -78,7 +78,7 @@ function NavBar() {
           </Nav>
           <Dropdown>
             <Dropdown.Toggle id='dropdown-basic' className='icons'>
-              <img src={globe} alt='Globe Icon for language' />
+              <Globe className='icons' />
             </Dropdown.Toggle>
             <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
           </Dropdown>
