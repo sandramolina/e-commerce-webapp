@@ -23,15 +23,27 @@ function NavBar() {
   const dispatch = useDispatch();
   const clickOnCart = () => dispatch(openCart());
 
-  const clickOnAll = () => dispatch(displayAll());
-
-  const clickOnEyesCategory = () => dispatch(filterByCategory('EYES'));
-
-  const clickOnFaceCategory = () => dispatch(filterByCategory('FACE'));
-
-  const clickOnLipsCategory = () => dispatch(filterByCategory('LIPS'));
-
-  const clickOnNailsCategory = () => dispatch(filterByCategory('NAILS'));
+  const handleCategoryClick = (categoryToFilter) => {
+    switch (categoryToFilter) {
+      case 'ALL':
+        dispatch(displayAll());
+        break;
+      case 'EYES':
+        dispatch(filterByCategory('EYES'));
+        break;
+      case 'FACE':
+        dispatch(filterByCategory('FACE'));
+        break;
+      case 'LIPS':
+        dispatch(filterByCategory('LIPS'));
+        break;
+      case 'NAILS':
+        dispatch(filterByCategory('NAILS'));
+        break;
+      default:
+        console.log('A little Bit Dramatic');
+    }
+  };
 
   return (
     <>
@@ -66,7 +78,11 @@ function NavBar() {
             >
               <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
                 <NavItem>
-                  <Nav.Link as={Link} to='/products/all' onClick={clickOnAll}>
+                  <Nav.Link
+                    as={Link}
+                    to='/products/all'
+                    onClick={() => handleCategoryClick('ALL')}
+                  >
                     ALL
                   </Nav.Link>
                 </NavItem>
@@ -74,7 +90,7 @@ function NavBar() {
                   <Nav.Link
                     as={Link}
                     to='/products/eyes'
-                    onClick={clickOnEyesCategory}
+                    onClick={() => handleCategoryClick('EYES')}
                   >
                     EYES
                   </Nav.Link>
@@ -83,7 +99,7 @@ function NavBar() {
                   <Nav.Link
                     as={Link}
                     to='/products/face'
-                    onClick={clickOnFaceCategory}
+                    onClick={() => handleCategoryClick('FACE')}
                   >
                     FACE
                   </Nav.Link>
@@ -92,7 +108,7 @@ function NavBar() {
                   <Nav.Link
                     as={Link}
                     to='/products/lips'
-                    onClick={clickOnLipsCategory}
+                    onClick={() => handleCategoryClick('LIPS')}
                   >
                     LIPS
                   </Nav.Link>
@@ -101,7 +117,7 @@ function NavBar() {
                   <Nav.Link
                     as={Link}
                     to='/products/nails'
-                    onClick={clickOnNailsCategory}
+                    onClick={() => handleCategoryClick('NAILS')}
                   >
                     NAILS
                   </Nav.Link>
