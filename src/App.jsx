@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import NavBar from './components/navBar/NavBar';
@@ -13,7 +13,7 @@ import ProductGrid from './containers/ProductGrid';
 function App() {
   return (
     <div className='App'>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route
             path='/'
@@ -24,12 +24,14 @@ function App() {
               </>
             }
           />
-          <Route path='products' element={<ProductGrid />} />
+          <Route path='products' element={<ProductGrid />}>
+            <Route path=':category' element={<ProductGrid />} />
+          </Route>
         </Routes>
         <NavBar />
         <CartModal />
         <Footer />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

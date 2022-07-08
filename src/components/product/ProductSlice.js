@@ -8,11 +8,17 @@ export const productsSlice = createSlice({
   name: 'productsState',
   initialState,
   reducers: {
-    increment: ({ state }) => {
-      products = [...state.products, state.products[0]];
+    displayAll: (state) => {
+      state.products = products;
+    },
+    filterByCategory: (state, action) => {
+      const filteredProducts = products.filter(
+        (product) => product.productCategory === action.payload
+      );
+      state.products = filteredProducts;
     },
   },
 });
 
-export const { increment } = productsSlice.actions;
+export const { displayAll, filterByCategory } = productsSlice.actions;
 export default productsSlice.reducer;

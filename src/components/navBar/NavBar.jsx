@@ -9,6 +9,7 @@ import {
   Form,
   FormControl,
   NavDropdown,
+  NavItem,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -16,10 +17,21 @@ import '../../css/main.min.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
 import { openCart } from '../cart/CartModalSlice';
+import { displayAll, filterByCategory } from '../product/ProductSlice';
 
 function NavBar() {
   const dispatch = useDispatch();
   const clickOnCart = () => dispatch(openCart());
+
+  const handleCategoryClick = (categoryToFilter) => {
+    switch (categoryToFilter) {
+      case 'ALL':
+        dispatch(displayAll());
+        break;
+      default:
+        dispatch(filterByCategory(categoryToFilter));
+    }
+  };
 
   return (
     <>
@@ -53,12 +65,51 @@ function NavBar() {
               navbarScroll
             >
               <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
-                <Link to='/products'>
-                  <p>ALL</p>
-                </Link>
-                <NavDropdown.Item href='#face'>FACE</NavDropdown.Item>
-                <NavDropdown.Item href='#lips'>LIPS</NavDropdown.Item>
-                <NavDropdown.Item href='#nails'>NAILS</NavDropdown.Item>
+                <NavItem>
+                  <Nav.Link
+                    as={Link}
+                    to='/products/all'
+                    onClick={() => handleCategoryClick('ALL')}
+                  >
+                    ALL
+                  </Nav.Link>
+                </NavItem>
+                <NavItem>
+                  <Nav.Link
+                    as={Link}
+                    to='/products/eyes'
+                    onClick={() => handleCategoryClick('EYES')}
+                  >
+                    EYES
+                  </Nav.Link>
+                </NavItem>
+                <NavItem>
+                  <Nav.Link
+                    as={Link}
+                    to='/products/face'
+                    onClick={() => handleCategoryClick('FACE')}
+                  >
+                    FACE
+                  </Nav.Link>
+                </NavItem>
+                <NavItem>
+                  <Nav.Link
+                    as={Link}
+                    to='/products/lips'
+                    onClick={() => handleCategoryClick('LIPS')}
+                  >
+                    LIPS
+                  </Nav.Link>
+                </NavItem>
+                <NavItem>
+                  <Nav.Link
+                    as={Link}
+                    to='/products/nails'
+                    onClick={() => handleCategoryClick('NAILS')}
+                  >
+                    NAILS
+                  </Nav.Link>
+                </NavItem>
               </NavDropdown>
               <Nav.Link href='WT'>WHAT&#39;S TRENDING</Nav.Link>
               <Nav.Link href='F'>FAVOURITES</Nav.Link>
