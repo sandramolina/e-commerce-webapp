@@ -17,13 +17,21 @@ import '../../css/main.min.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
 import { openCart } from '../cart/CartModalSlice';
-import { displayAll } from '../product/ProductSlice';
+import { displayAll, filterByCategory } from '../product/ProductSlice';
 
 function NavBar() {
   const dispatch = useDispatch();
   const clickOnCart = () => dispatch(openCart());
 
   const clickOnAll = () => dispatch(displayAll());
+
+  const clickOnEyesCategory = () => dispatch(filterByCategory('EYES'));
+
+  const clickOnFaceCategory = () => dispatch(filterByCategory('FACE'));
+
+  const clickOnLipsCategory = () => dispatch(filterByCategory('LIPS'));
+
+  const clickOnNailsCategory = () => dispatch(filterByCategory('NAILS'));
 
   return (
     <>
@@ -62,15 +70,42 @@ function NavBar() {
                     ALL
                   </Nav.Link>
                 </NavItem>
-                <NavItem href='/products'>
-                  {/* Missing on click */}
-                  <Nav.Link as={Link} to='/products'>
+                <NavItem href='products?category=eyes'>
+                  <Nav.Link
+                    as={Link}
+                    to='/products?category=eyes'
+                    onClick={clickOnEyesCategory}
+                  >
                     EYES
                   </Nav.Link>
                 </NavItem>
-                <NavDropdown.Item>FACE</NavDropdown.Item>
-                <NavDropdown.Item href='#lips'>LIPS</NavDropdown.Item>
-                <NavDropdown.Item href='#nails'>NAILS</NavDropdown.Item>
+                <NavItem href='products?category=face'>
+                  <Nav.Link
+                    as={Link}
+                    to='/products?category=face'
+                    onClick={clickOnFaceCategory}
+                  >
+                    FACE
+                  </Nav.Link>
+                </NavItem>
+                <NavItem href='products?category=lips'>
+                  <Nav.Link
+                    as={Link}
+                    to='/products?category=lips'
+                    onClick={clickOnLipsCategory}
+                  >
+                    LIPS
+                  </Nav.Link>
+                </NavItem>
+                <NavItem href='products?category=nails'>
+                  <Nav.Link
+                    as={Link}
+                    to='/products?category=nails'
+                    onClick={clickOnNailsCategory}
+                  >
+                    NAILS
+                  </Nav.Link>
+                </NavItem>
               </NavDropdown>
               <Nav.Link href='WT'>WHAT&#39;S TRENDING</Nav.Link>
               <Nav.Link href='F'>FAVOURITES</Nav.Link>

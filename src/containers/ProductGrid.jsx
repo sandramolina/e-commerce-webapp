@@ -12,9 +12,10 @@ const ProductGrid = () => {
     <Product product={product} key={product.id} />
   ));
   return (
-    <ul>
+    <>
+      <h1 className='product-title'>Products</h1>
       <div className='products'>{productNodes} </div>
-    </ul>
+    </>
   );
 };
 
