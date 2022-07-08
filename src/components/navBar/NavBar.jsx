@@ -28,20 +28,8 @@ function NavBar() {
       case 'ALL':
         dispatch(displayAll());
         break;
-      case 'EYES':
-        dispatch(filterByCategory('EYES'));
-        break;
-      case 'FACE':
-        dispatch(filterByCategory('FACE'));
-        break;
-      case 'LIPS':
-        dispatch(filterByCategory('LIPS'));
-        break;
-      case 'NAILS':
-        dispatch(filterByCategory('NAILS'));
-        break;
       default:
-        console.log('A little Bit Dramatic');
+        dispatch(filterByCategory(categoryToFilter));
     }
   };
 
