@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { clearCart } from './CartItemSlice';
 import CartItem from './CartItem';
@@ -21,16 +22,22 @@ function Cart() {
       currentCartItem.product.price.amount * currentCartItem.count,
     0
   );
+
+  const { t } = useTranslation();
   return (
-    <ul>
-      <h4>{productsInCart.length} items in the bag:</h4>
+    <div>
+      <h4>
+        {productsInCart.length} {t('items')}
+      </h4>
       <div>{productsInCartNodes} </div>
       <hr />
-      <h3>Total purchase: £{totalCart}</h3>
+      <h3>
+        {t('total_purchase')} £{totalCart}
+      </h3>
       {productsInCart.length !== 0 ? (
         <Button onClick={handleClick}>Checkout</Button>
       ) : null}
-    </ul>
+    </div>
   );
 }
 

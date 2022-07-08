@@ -10,14 +10,22 @@ import {
   FormControl,
   NavDropdown,
   NavItem,
+  Dropdown,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import Flag from 'react-flagkit';
 
 import '../../css/main.min.css';
+import './NavBar.css';
 
 import shoppingBag from '../../images/icons/shoppingbag.svg';
+import globe from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
 import { displayAll, filterByCategory } from '../product/ProductSlice';
+
+import languages from './languages';
 
 function NavBar() {
   const dispatch = useDispatch();
@@ -33,6 +41,21 @@ function NavBar() {
     }
   };
 
+  const { t } = useTranslation();
+
+  const languagesNodes = languages.map(({ code, countryCode, name }) => (
+    <Dropdown.Item
+      key={countryCode}
+      onClick={() => i18next.changeLanguage(code)}
+    >
+      <Flag
+        country={countryCode}
+        alt={`Flag of ${countryCode}`}
+        className='flag'
+      />
+      {name}
+    </Dropdown.Item>
+  ));
   return (
     <>
       <Navbar bg='light' expand='lg' fixed='top'>
@@ -49,14 +72,16 @@ function NavBar() {
             </Navbar.Brand>
           </Link>
           <Nav>
-            <button onClick={clickOnCart} type='button'>
-              <img
-                src={shoppingBag}
-                alt='Shopping cart'
-                className='shopping-bag d-flex'
-              />
+            <button onClick={clickOnCart} type='button' className='icons'>
+              <img src={shoppingBag} alt='Shopping cart' />
             </button>
           </Nav>
+          <Dropdown>
+            <Dropdown.Toggle id='dropdown-basic' className='icons'>
+              <img src={globe} alt='Globe Icon for language' />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
+          </Dropdown>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse id='navbarScroll'>
             <Nav
@@ -64,14 +89,14 @@ function NavBar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
+              <NavDropdown title={t('products')} id='navbarScrollingDropdown'>
                 <NavItem>
                   <Nav.Link
                     as={Link}
                     to='/products/all'
                     onClick={() => handleCategoryClick('ALL')}
                   >
-                    ALL
+                    {t('all')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -80,7 +105,7 @@ function NavBar() {
                     to='/products/eyes'
                     onClick={() => handleCategoryClick('EYES')}
                   >
-                    EYES
+                    {t('eyes')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -89,7 +114,7 @@ function NavBar() {
                     to='/products/face'
                     onClick={() => handleCategoryClick('FACE')}
                   >
-                    FACE
+                    {t('face')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -98,7 +123,7 @@ function NavBar() {
                     to='/products/lips'
                     onClick={() => handleCategoryClick('LIPS')}
                   >
-                    LIPS
+                    {t('lips')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -107,22 +132,22 @@ function NavBar() {
                     to='/products/nails'
                     onClick={() => handleCategoryClick('NAILS')}
                   >
-                    NAILS
+                    {t('nails')}
                   </Nav.Link>
                 </NavItem>
               </NavDropdown>
-              <Nav.Link href='WT'>WHAT&#39;S TRENDING</Nav.Link>
-              <Nav.Link href='F'>FAVOURITES</Nav.Link>
+              <Nav.Link href='WT'>{t('whats_trending')}</Nav.Link>
+              <Nav.Link href='F'>{t('faves')}</Nav.Link>
               <Button variant='outline-success'>Sign in/Sign Up</Button>
             </Nav>
             <Form className='d-flex'>
               <FormControl
                 type='search'
-                placeholder='Search'
+                placeholder={t('search')}
                 className='me-2'
                 aria-label='Search'
               />
-              <Button variant='outline-success'>Search</Button>
+              <Button variant='outline-success'>{t('search')}</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
