@@ -1,20 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const faves = [];
-const initialState = { faves };
+const initialState = { faves: [] };
 
 export const favouriteProductsSlice = createSlice({
   name: 'favesState',
   initialState,
   reducers: {
-    updateFavourites: (state, action) => {
-      const foundProductIndex = state.faves.findIndex(
-        (fave) => fave.id === action.payload.id
+    updateFavourites: ({ faves }, { payload }) => {
+      const foundProductIndex = faves.findIndex(
+        (fave) => fave.id === payload.id
       );
       if (foundProductIndex === -1) {
-        state.faves.push(action.payload);
+        faves.push(payload);
       } else {
-        state.faves.splice(foundProductIndex, 1);
+        faves.splice(foundProductIndex, 1);
       }
     },
   },
