@@ -65,12 +65,12 @@ function NavBar() {
               navbarScroll
             >
               <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
-                <NavItem href='/products'>
+                <NavItem href='/products?category=all'>
                   <Nav.Link as={Link} to='/products' onClick={clickOnAll}>
                     ALL
                   </Nav.Link>
                 </NavItem>
-                <NavItem href='products?category=eyes'>
+                <NavItem href='/products?category=eyes'>
                   <Nav.Link
                     as={Link}
                     to='/products?category=eyes'

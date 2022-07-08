@@ -24,7 +24,9 @@ function App() {
               </>
             }
           />
-          <Route path='products' element={<ProductGrid />} />
+          <Route path='products' element={<ProductGrid />}>
+            <Route path=':category' element={<ProductGrid />} />
+          </Route>
         </Routes>
         <NavBar />
         <CartModal />
