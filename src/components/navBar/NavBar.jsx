@@ -20,8 +20,8 @@ import Flag from 'react-flagkit';
 import '../../css/main.min.css';
 import './NavBar.css';
 
-import shoppingBag from '../../images/icons/shoppingbag.svg';
-import globe from '../../images/icons/globe.svg';
+import { ReactComponent as ShoppingBag } from '../../images/icons/shoppingbag.svg';
+import { ReactComponent as Globe } from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
 import { displayAll, filterByCategory } from '../product/ProductSlice';
 
@@ -72,13 +72,11 @@ function NavBar() {
             </Navbar.Brand>
           </Link>
           <Nav>
-            <button onClick={clickOnCart} type='button' className='icons'>
-              <img src={shoppingBag} alt='Shopping cart' />
-            </button>
+            <ShoppingBag onClick={clickOnCart} />
           </Nav>
           <Dropdown>
             <Dropdown.Toggle id='dropdown-basic' className='icons'>
-              <img src={globe} alt='Globe Icon for language' />
+              <Globe className='icons' />
             </Dropdown.Toggle>
             <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
           </Dropdown>
