@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Card } from 'react-bootstrap';
 
 import { addItemToCart } from '../cart/CartItemSlice';
-
-import { updateFavourites } from './FavouriteProductsSlice';
-
 import '../../css/main.min.css';
 import './Product.css';
+import { ReactComponent as Heart } from '../../images/icons/heart-fill.svg';
+
+import { updateFavourites } from './FavouriteProductsSlice';
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -29,6 +29,14 @@ const Product = ({ product }) => {
     };
     dispatch(addItemToCart(itemCartObject));
   };
+
+  const favesArray = useSelector(({ favesState }) => favesState.faves);
+
+  let isFave = false;
+  const foundFave = favesArray.find((fave) => fave.id === product.id);
+  if (foundFave !== undefined) {
+    isFave = true;
+  }
 
   return (
     <div>
@@ -56,12 +64,10 @@ const Product = ({ product }) => {
             </select>
             <input type='submit' value='addToCart' />
           </form>
-          <button
-            type='button'
+          <Heart
+            className={isFave ? 'heart-faved' : 'heart'}
             onClick={() => dispatch(updateFavourites(product))}
-          >
-            Fave
-          </button>
+          />
         </Card.Body>
       </Card>
     </div>

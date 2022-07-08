@@ -3,3 +3,11 @@
   font-weight: bold;
   margin-block-end: 0;
 }
+
+.heart {
+  fill: rgba(167, 158, 158, 0.849);
+}
+
+.heart-faved {
+  fill: red;
+}
