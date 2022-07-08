@@ -12,6 +12,7 @@ import {
   NavItem,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import '../../css/main.min.css';
 
@@ -32,6 +33,8 @@ function NavBar() {
         dispatch(filterByCategory(categoryToFilter));
     }
   };
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -64,14 +67,14 @@ function NavBar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
+              <NavDropdown title={t('products')} id='navbarScrollingDropdown'>
                 <NavItem>
                   <Nav.Link
                     as={Link}
                     to='/products/all'
                     onClick={() => handleCategoryClick('ALL')}
                   >
-                    ALL
+                    {t('all')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -80,7 +83,7 @@ function NavBar() {
                     to='/products/eyes'
                     onClick={() => handleCategoryClick('EYES')}
                   >
-                    EYES
+                    {t('eyes')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -89,7 +92,7 @@ function NavBar() {
                     to='/products/face'
                     onClick={() => handleCategoryClick('FACE')}
                   >
-                    FACE
+                    {t('face')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -98,7 +101,7 @@ function NavBar() {
                     to='/products/lips'
                     onClick={() => handleCategoryClick('LIPS')}
                   >
-                    LIPS
+                    {t('lips')}
                   </Nav.Link>
                 </NavItem>
                 <NavItem>
@@ -107,22 +110,22 @@ function NavBar() {
                     to='/products/nails'
                     onClick={() => handleCategoryClick('NAILS')}
                   >
-                    NAILS
+                    {t('nails')}
                   </Nav.Link>
                 </NavItem>
               </NavDropdown>
-              <Nav.Link href='WT'>WHAT&#39;S TRENDING</Nav.Link>
-              <Nav.Link href='F'>FAVOURITES</Nav.Link>
+              <Nav.Link href='WT'>{t('whats_trending')}</Nav.Link>
+              <Nav.Link href='F'>{t('faves')}</Nav.Link>
               <Button variant='outline-success'>Sign in/Sign Up</Button>
             </Nav>
             <Form className='d-flex'>
               <FormControl
                 type='search'
-                placeholder='Search'
+                placeholder={t('search')}
                 className='me-2'
                 aria-label='Search'
               />
-              <Button variant='outline-success'>Search</Button>
+              <Button variant='outline-success'>{t('search')}</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
