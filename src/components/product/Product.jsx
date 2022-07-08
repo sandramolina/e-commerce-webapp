@@ -5,6 +5,8 @@ import { Card } from 'react-bootstrap';
 
 import { addItemToCart } from '../cart/CartItemSlice';
 
+import { updateFavourites } from './FavouriteProductsSlice';
+
 import '../../css/main.min.css';
 import './Product.css';
 
@@ -54,6 +56,12 @@ const Product = ({ product }) => {
             </select>
             <input type='submit' value='addToCart' />
           </form>
+          <button
+            type='button'
+            onClick={() => dispatch(updateFavourites(product))}
+          >
+            Fave
+          </button>
         </Card.Body>
       </Card>
     </div>
