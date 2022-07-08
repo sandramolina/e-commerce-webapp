@@ -65,42 +65,42 @@ function NavBar() {
               navbarScroll
             >
               <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
-                <NavItem href='/products?category=all'>
-                  <Nav.Link as={Link} to='/products' onClick={clickOnAll}>
+                <NavItem>
+                  <Nav.Link as={Link} to='/products/all' onClick={clickOnAll}>
                     ALL
                   </Nav.Link>
                 </NavItem>
-                <NavItem href='/products?category=eyes'>
+                <NavItem>
                   <Nav.Link
                     as={Link}
-                    to='/products?category=eyes'
+                    to='/products/eyes'
                     onClick={clickOnEyesCategory}
                   >
                     EYES
                   </Nav.Link>
                 </NavItem>
-                <NavItem href='products?category=face'>
+                <NavItem>
                   <Nav.Link
                     as={Link}
-                    to='/products?category=face'
+                    to='/products/face'
                     onClick={clickOnFaceCategory}
                   >
                     FACE
                   </Nav.Link>
                 </NavItem>
-                <NavItem href='products?category=lips'>
+                <NavItem>
                   <Nav.Link
                     as={Link}
-                    to='/products?category=lips'
+                    to='/products/lips'
                     onClick={clickOnLipsCategory}
                   >
                     LIPS
                   </Nav.Link>
                 </NavItem>
-                <NavItem href='products?category=nails'>
+                <NavItem>
                   <Nav.Link
                     as={Link}
-                    to='/products?category=nails'
+                    to='/products/nails'
                     onClick={clickOnNailsCategory}
                   >
                     NAILS
