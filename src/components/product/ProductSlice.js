@@ -27,9 +27,12 @@ export const productsSlice = createSlice({
         faves.splice(foundProductIndex, 1);
       }
     },
+    displayFaves: (state) => {
+      state.products = state.faves;
+    },
   },
 });
 
-export const { displayAll, filterByCategory, updateFavourites } =
+export const { displayAll, displayFaves, filterByCategory, updateFavourites } =
   productsSlice.actions;
 export default productsSlice.reducer;

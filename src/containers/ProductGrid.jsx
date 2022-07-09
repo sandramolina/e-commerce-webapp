@@ -21,7 +21,11 @@ const ProductGrid = () => {
   return (
     <>
       <h1 className='product-title'> {categoryTitle} Products</h1>
-      <div className='products'>{productNodes} </div>
+      {productNodes.length !== 0 ? (
+        <div className='products'>{productNodes} </div>
+      ) : (
+        <h3>No products to show</h3>
+      )}
     </>
   );
 };
