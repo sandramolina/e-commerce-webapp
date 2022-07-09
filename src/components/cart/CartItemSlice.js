@@ -1,26 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const items = [];
-const initialState = { items };
+const initialState = { items: [] };
 
 export const cartItemsSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addItemToCart: (state, action) => {
-      const arrayOfCartItems = state.items;
-      const foundCartItemIndex = arrayOfCartItems.findIndex(
+    addItemToCart: ({ items }, action) => {
+      const foundCartItemIndex = items.findIndex(
         (cartItem) => cartItem.product.id === action.payload.product.id
       );
       if (foundCartItemIndex !== -1) {
-        arrayOfCartItems[foundCartItemIndex].count += action.payload.count;
+        items[foundCartItemIndex].count += action.payload.count;
       } else {
-        arrayOfCartItems.push(action.payload);
+        items.push(action.payload);
       }
     },
     removeItemFromCart: (state, action) => {
-      const arrayOfCartItems = state.items;
-      const filteredItems = arrayOfCartItems.filter(
+      const filteredItems = state.items.filter(
         (cartItem) => cartItem.id !== action.payload
       );
       state.items = filteredItems;

@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Card } from 'react-bootstrap';
 
 import { addItemToCart } from '../cart/CartItemSlice';
-
 import '../../css/main.min.css';
 import './Product.css';
+import { ReactComponent as Heart } from '../../images/icons/heart-fill.svg';
+
+import { updateFavourites } from './ProductSlice';
 
 const Product = ({ product }) => {
-  const dispatch = useDispatch();
-
+  // Setting itemCart object that will be added to the cart:
   const [count, setCount] = useState(0);
 
   const handleCountSelection = (event) => setCount(event.target.value);
 
+  const dispatch = useDispatch();
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const itemCount = Number(count);
@@ -27,6 +29,14 @@ const Product = ({ product }) => {
     };
     dispatch(addItemToCart(itemCartObject));
   };
+
+  // Checking if certaing product is included in the favourite list:
+  const favesArray = useSelector(({ productsState }) => productsState.faves);
+  let isFave = false;
+  const foundFave = favesArray.find((fave) => fave.id === product.id);
+  if (foundFave !== undefined) {
+    isFave = true;
+  }
 
   return (
     <div>
@@ -54,6 +64,10 @@ const Product = ({ product }) => {
             </select>
             <input type='submit' value='addToCart' />
           </form>
+          <Heart
+            className={isFave ? 'heart-faved' : 'heart'}
+            onClick={() => dispatch(updateFavourites(product))}
+          />
         </Card.Body>
       </Card>
     </div>

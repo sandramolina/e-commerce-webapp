@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import products from '../../mock';
 
-const initialState = { products };
+const initialState = { products, faves: [] };
 
 export const productsSlice = createSlice({
   name: 'productsState',
@@ -17,8 +17,22 @@ export const productsSlice = createSlice({
       );
       state.products = filteredProducts;
     },
+    updateFavourites: ({ faves }, { payload }) => {
+      const foundProductIndex = faves.findIndex(
+        (fave) => fave.id === payload.id
+      );
+      if (foundProductIndex === -1) {
+        faves.push(payload);
+      } else {
+        faves.splice(foundProductIndex, 1);
+      }
+    },
+    displayFaves: (state) => {
+      state.products = state.faves;
+    },
   },
 });
 
-export const { displayAll, filterByCategory } = productsSlice.actions;
+export const { displayAll, displayFaves, filterByCategory, updateFavourites } =
+  productsSlice.actions;
 export default productsSlice.reducer;

@@ -23,7 +23,11 @@ import './NavBar.css';
 import { ReactComponent as ShoppingBag } from '../../images/icons/shoppingbag.svg';
 import { ReactComponent as Globe } from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
-import { displayAll, filterByCategory } from '../product/ProductSlice';
+import {
+  displayAll,
+  displayFaves,
+  filterByCategory,
+} from '../product/ProductSlice';
 
 import languages from './languages';
 
@@ -35,6 +39,9 @@ function NavBar() {
     switch (categoryToFilter) {
       case 'ALL':
         dispatch(displayAll());
+        break;
+      case 'FAVES':
+        dispatch(displayFaves());
         break;
       default:
         dispatch(filterByCategory(categoryToFilter));
@@ -135,7 +142,13 @@ function NavBar() {
                 </NavItem>
               </NavDropdown>
               <Nav.Link href='WT'>{t('whats_trending')}</Nav.Link>
-              <Nav.Link href='F'>{t('faves')}</Nav.Link>
+              <Nav.Link
+                as={Link}
+                to='/products/faves'
+                onClick={() => handleCategoryClick('FAVES')}
+              >
+                {t('faves')}
+              </Nav.Link>
               <Button variant='outline-success'>Sign in/Sign Up</Button>
             </Nav>
             <Form className='d-flex'>
