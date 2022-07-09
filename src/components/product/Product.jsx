@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Card } from 'react-bootstrap';
+import { Card, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { addItemToCart } from '../cart/CartItemSlice';
 import '../../css/main.min.css';
@@ -68,6 +69,9 @@ const Product = ({ product }) => {
             className={isFave ? 'heart-faved' : 'heart'}
             onClick={() => dispatch(updateFavourites(product))}
           />
+          <Nav.Link as={Link} to={`/${product.id}`}>
+            SHOP
+          </Nav.Link>
         </Card.Body>
       </Card>
     </div>

@@ -9,6 +9,7 @@ import CategoriesBox from './containers/CategoriesBox';
 import Footer from './components/footer/Footer';
 import CartModal from './components/cart/CartModal';
 import ProductGrid from './containers/ProductGrid';
+import DetailedProduct from './components/product/DetailedProduct';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='products' element={<ProductGrid />}>
             <Route path=':category' element={<ProductGrid />} />
           </Route>
+          <Route path=':id' element={<DetailedProduct />} />
         </Routes>
         <NavBar />
         <CartModal />
