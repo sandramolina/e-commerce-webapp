@@ -11,12 +11,12 @@ import { ReactComponent as Heart } from '../../images/icons/heart-fill.svg';
 import { updateFavourites } from './ProductSlice';
 
 const Product = ({ product }) => {
-  const dispatch = useDispatch();
-
+  // Setting itemCart object that will be added to the cart:
   const [count, setCount] = useState(0);
 
   const handleCountSelection = (event) => setCount(event.target.value);
 
+  const dispatch = useDispatch();
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const itemCount = Number(count);
@@ -30,8 +30,8 @@ const Product = ({ product }) => {
     dispatch(addItemToCart(itemCartObject));
   };
 
+  // Checking if certaing product is included in the favourite list:
   const favesArray = useSelector(({ productsState }) => productsState.faves);
-
   let isFave = false;
   const foundFave = favesArray.find((fave) => fave.id === product.id);
   if (foundFave !== undefined) {
