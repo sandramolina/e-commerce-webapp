@@ -77,8 +77,8 @@ function NavBar() {
             </Navbar.Brand>
           </Link>
           <Dropdown>
-            <Dropdown.Toggle id='dropdown-basic' className='icons'>
-              <Globe className='icons' />
+            <Dropdown.Toggle id='dropdown-basic' className='globe-btn'>
+              <Globe />
             </Dropdown.Toggle>
             <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
           </Dropdown>
