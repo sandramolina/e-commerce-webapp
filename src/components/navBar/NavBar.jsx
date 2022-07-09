@@ -78,12 +78,12 @@ function NavBar() {
           </Link>
           <Dropdown>
             <Dropdown.Toggle id='dropdown-basic' className='globe-btn'>
-              <Globe />
+              <Globe className='globe-img' />
             </Dropdown.Toggle>
             <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
           </Dropdown>
           <Nav>
-            <ShoppingBag onClick={clickOnCart} />
+            <ShoppingBag onClick={clickOnCart} className='bag' />
           </Nav>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse id='navbarScroll'>

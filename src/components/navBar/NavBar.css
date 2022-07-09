@@ -12,6 +12,14 @@
   width: 70%;
 }
 
+.globe-img {
+  width: 25px;
+}
+
+.bag {
+  width: 45px;
+}
+
 @media (min-width: 992px) {
   #navbarScroll {
     flex-wrap: wrap !important;
