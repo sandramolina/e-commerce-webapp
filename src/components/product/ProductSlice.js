@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createSelector } from '@reduxjs/toolkit';
 
 import products from '../../mock';
 
@@ -32,6 +32,13 @@ export const productsSlice = createSlice({
     },
   },
 });
+
+export const selectAllProducts = (state) => state.products;
+export const selectByProductId = createSelector(
+  [selectAllProducts, (state, productId) => productId],
+  (productsList, productId) =>
+    productsList.find((product) => product.id === productId)
+);
 
 export const { displayAll, displayFaves, filterByCategory, updateFavourites } =
   productsSlice.actions;
