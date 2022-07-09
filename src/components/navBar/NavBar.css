@@ -11,3 +11,10 @@
 .logo {
   width: 70%;
 }
+
+@media (min-width: 992px) {
+  #navbarScroll {
+    flex-wrap: wrap !important;
+    justify-content: space-evenly !important;
+  }
+}
