@@ -71,22 +71,20 @@ function NavBar() {
             <Navbar.Brand>
               <img
                 src='/logo.png'
-                width='93'
-                height='26'
-                className='d-inline-block align-top'
+                className='d-inline-block align-top logo'
                 alt='So fetch! makeup logo'
               />
             </Navbar.Brand>
           </Link>
-          <Nav>
-            <ShoppingBag onClick={clickOnCart} />
-          </Nav>
           <Dropdown>
             <Dropdown.Toggle id='dropdown-basic' className='icons'>
               <Globe className='icons' />
             </Dropdown.Toggle>
             <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
           </Dropdown>
+          <Nav>
+            <ShoppingBag onClick={clickOnCart} />
+          </Nav>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse id='navbarScroll'>
             <Nav
