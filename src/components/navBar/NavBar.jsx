@@ -76,6 +76,7 @@ function NavBar() {
               />
             </Navbar.Brand>
           </Link>
+          {/* <div className='navbar-subsection'> */}
           <Dropdown>
             <Dropdown.Toggle id='dropdown-basic' className='globe-btn'>
               <Globe className='globe-img' />
@@ -153,6 +154,7 @@ function NavBar() {
               <Button variant='outline-success'>{t('search')}</Button>
             </Form>
           </Navbar.Collapse>
+          {/* </div> */}
         </Container>
       </Navbar>
     </>
