@@ -8,7 +8,7 @@ import '../../css/main.min.css';
 import './Product.css';
 import { ReactComponent as Heart } from '../../images/icons/heart-fill.svg';
 
-import { updateFavourites } from './FavouriteProductsSlice';
+import { updateFavourites } from './ProductSlice';
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Product = ({ product }) => {
     dispatch(addItemToCart(itemCartObject));
   };
 
-  const favesArray = useSelector(({ favesState }) => favesState.faves);
+  const favesArray = useSelector(({ productsState }) => productsState.faves);
 
   let isFave = false;
   const foundFave = favesArray.find((fave) => fave.id === product.id);
