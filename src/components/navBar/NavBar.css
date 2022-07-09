@@ -2,8 +2,41 @@
   margin-right: 3%;
 }
 
-.icons {
+.globe-btn {
   background-color: #f2a0dc !important;
   border-color: #f2a0dc !important;
   fill: #8c0f31;
+}
+
+.logo {
+  width: 70%;
+}
+
+.globe-img {
+  width: 25px;
+}
+
+.bag {
+  width: 45px;
+}
+
+/* .navbar-subsection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+} */
+
+@media (min-width: 992px) {
+  #navbarScroll {
+    justify-content: space-evenly !important;
+  }
+  #navbarScroll,
+  button {
+    min-width: 140px;
+    margin-right: 10px;
+  }
+  #navbarScroll,
+  input {
+    min-width: 150px;
+  }
 }

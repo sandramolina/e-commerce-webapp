@@ -71,86 +71,79 @@ function NavBar() {
             <Navbar.Brand>
               <img
                 src='/logo.png'
-                width='93'
-                height='26'
-                className='d-inline-block align-top'
+                className='d-inline-block align-top logo'
                 alt='So fetch! makeup logo'
               />
             </Navbar.Brand>
           </Link>
-          <Nav>
-            <ShoppingBag onClick={clickOnCart} />
-          </Nav>
+          {/* <div className='navbar-subsection'> */}
           <Dropdown>
-            <Dropdown.Toggle id='dropdown-basic' className='icons'>
-              <Globe className='icons' />
+            <Dropdown.Toggle id='dropdown-basic' className='globe-btn'>
+              <Globe className='globe-img' />
             </Dropdown.Toggle>
             <Dropdown.Menu>{languagesNodes}</Dropdown.Menu>
           </Dropdown>
+          <Nav>
+            <ShoppingBag onClick={clickOnCart} className='bag' />
+          </Nav>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse id='navbarScroll'>
-            <Nav
-              className='me-auto my-2 my-lg-0'
-              style={{ maxHeight: '100px' }}
-              navbarScroll
+            <NavDropdown title={t('products')} id='navbarScrollingDropdown'>
+              <NavItem>
+                <Nav.Link
+                  as={Link}
+                  to='/products/all'
+                  onClick={() => handleCategoryClick('ALL')}
+                >
+                  {t('all')}
+                </Nav.Link>
+              </NavItem>
+              <NavItem>
+                <Nav.Link
+                  as={Link}
+                  to='/products/eyes'
+                  onClick={() => handleCategoryClick('EYES')}
+                >
+                  {t('eyes')}
+                </Nav.Link>
+              </NavItem>
+              <NavItem>
+                <Nav.Link
+                  as={Link}
+                  to='/products/face'
+                  onClick={() => handleCategoryClick('FACE')}
+                >
+                  {t('face')}
+                </Nav.Link>
+              </NavItem>
+              <NavItem>
+                <Nav.Link
+                  as={Link}
+                  to='/products/lips'
+                  onClick={() => handleCategoryClick('LIPS')}
+                >
+                  {t('lips')}
+                </Nav.Link>
+              </NavItem>
+              <NavItem>
+                <Nav.Link
+                  as={Link}
+                  to='/products/nails'
+                  onClick={() => handleCategoryClick('NAILS')}
+                >
+                  {t('nails')}
+                </Nav.Link>
+              </NavItem>
+            </NavDropdown>
+            <Nav.Link href='WT'>{t('whats_trending')}</Nav.Link>
+            <Nav.Link
+              as={Link}
+              to='/products/faves'
+              onClick={() => handleCategoryClick('FAVES')}
             >
-              <NavDropdown title={t('products')} id='navbarScrollingDropdown'>
-                <NavItem>
-                  <Nav.Link
-                    as={Link}
-                    to='/products/all'
-                    onClick={() => handleCategoryClick('ALL')}
-                  >
-                    {t('all')}
-                  </Nav.Link>
-                </NavItem>
-                <NavItem>
-                  <Nav.Link
-                    as={Link}
-                    to='/products/eyes'
-                    onClick={() => handleCategoryClick('EYES')}
-                  >
-                    {t('eyes')}
-                  </Nav.Link>
-                </NavItem>
-                <NavItem>
-                  <Nav.Link
-                    as={Link}
-                    to='/products/face'
-                    onClick={() => handleCategoryClick('FACE')}
-                  >
-                    {t('face')}
-                  </Nav.Link>
-                </NavItem>
-                <NavItem>
-                  <Nav.Link
-                    as={Link}
-                    to='/products/lips'
-                    onClick={() => handleCategoryClick('LIPS')}
-                  >
-                    {t('lips')}
-                  </Nav.Link>
-                </NavItem>
-                <NavItem>
-                  <Nav.Link
-                    as={Link}
-                    to='/products/nails'
-                    onClick={() => handleCategoryClick('NAILS')}
-                  >
-                    {t('nails')}
-                  </Nav.Link>
-                </NavItem>
-              </NavDropdown>
-              <Nav.Link href='WT'>{t('whats_trending')}</Nav.Link>
-              <Nav.Link
-                as={Link}
-                to='/products/faves'
-                onClick={() => handleCategoryClick('FAVES')}
-              >
-                {t('faves')}
-              </Nav.Link>
-              <Button variant='outline-success'>Sign in/Sign Up</Button>
-            </Nav>
+              {t('faves')}
+            </Nav.Link>
+            <Button variant='outline-success'>Sign in/Sign Up</Button>
             <Form className='d-flex'>
               <FormControl
                 type='search'
@@ -161,6 +154,7 @@ function NavBar() {
               <Button variant='outline-success'>{t('search')}</Button>
             </Form>
           </Navbar.Collapse>
+          {/* </div> */}
         </Container>
       </Navbar>
     </>
