@@ -9,7 +9,7 @@ import CategoriesBox from './containers/CategoriesBox';
 import Footer from './components/footer/Footer';
 import CartModal from './components/cart/CartModal';
 import ProductGrid from './containers/ProductGrid';
-import DetailedProduct from './components/product/DetailedProduct';
+import DetailedProduct from './components/product/detailedProduct/DetailedProduct';
 
 function App() {
   return (

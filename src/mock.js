@@ -54,15 +54,18 @@ const products = [
     colours: [
       {
         colourName: 'Passion Red',
-        colourImage: 'url',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-red.png',
       },
       {
-        colourName: 'Ruby Woo',
-        colourImage: 'url',
+        colourName: 'React Blue',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-react-blue.png',
       },
       {
         colourName: 'Emerald',
-        colourImage: 'url',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-emerald.png',
       },
     ],
     isFavourite: false,

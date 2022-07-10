@@ -1,0 +1,14 @@
+.rate-count {
+  font-weight: bold;
+  color: blueviolet;
+}
+
+.colour-img {
+  padding: 1%;
+  width: 10%;
+}
+
+.dropdown-menu {
+  display: flex;
+  align-items: flex-start;
+}
