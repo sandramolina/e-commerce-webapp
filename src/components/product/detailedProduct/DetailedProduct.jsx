@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 
 import { selectByProductId } from '../ProductSlice';
 
+import Checkout from './Checkout';
 import './DetailedProduct.css';
 import Details from './Details';
 
@@ -52,6 +53,7 @@ const DetailedProduct = () => {
         <Dropdown.Menu>{colourNodesDropdown}</Dropdown.Menu>
       </Dropdown>
       <Details product={product} />
+      <Checkout product={product} />
     </>
   );
 };
