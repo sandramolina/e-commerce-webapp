@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { selectByProductId } from '../ProductSlice';
 
 import './DetailedProduct.css';
+import Details from './Details';
 
 const DetailedProduct = () => {
   const { id } = useParams();
@@ -50,6 +51,7 @@ const DetailedProduct = () => {
         <Dropdown.Toggle className='colour-dd-tt'>Select Color</Dropdown.Toggle>
         <Dropdown.Menu>{colourNodesDropdown}</Dropdown.Menu>
       </Dropdown>
+      <Details product={product} />
     </>
   );
 };
