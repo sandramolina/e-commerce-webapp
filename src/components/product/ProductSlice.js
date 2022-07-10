@@ -8,6 +8,9 @@ export const productsSlice = createSlice({
   name: 'productsState',
   initialState,
   reducers: {
+    displayAll: (state) => {
+      state.products = products;
+    },
     filterByCategory: (state, action) => {
       const filteredProducts = products.filter(
         (product) => product.productCategory === action.payload
@@ -49,6 +52,6 @@ export const selectByProductId = createSelector(
 //   console.log(faves);
 // };
 
-export const { displayFaves, filterByCategory, updateFavourites } =
+export const { displayAll, displayFaves, filterByCategory, updateFavourites } =
   productsSlice.actions;
 export default productsSlice.reducer;

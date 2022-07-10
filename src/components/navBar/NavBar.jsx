@@ -26,7 +26,7 @@ import { openCart } from '../cart/CartModalSlice';
 import {
   displayFaves,
   filterByCategory,
-  selectAllProducts,
+  displayAll,
 } from '../product/ProductSlice';
 
 import languages from './languages';
@@ -38,7 +38,7 @@ function NavBar() {
   const handleCategoryClick = (categoryToFilter) => {
     switch (categoryToFilter) {
       case 'ALL':
-        dispatch(selectAllProducts());
+        dispatch(displayAll());
         break;
       case 'FAVES':
         dispatch(displayFaves());
