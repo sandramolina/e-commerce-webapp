@@ -44,7 +44,7 @@ describe('Home', () => {
 
 describe('Products Page', () => {
   beforeEach(() => {
-    cy.visit('/products');
+    cy.visit('/products/all');
   });
 
   it('displays products container', () => {

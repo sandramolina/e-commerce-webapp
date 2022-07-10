@@ -54,17 +54,21 @@ const products = [
     colours: [
       {
         colourName: 'Passion Red',
-        colourImage: 'url',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-red.png',
       },
       {
-        colourName: 'Ruby Woo',
-        colourImage: 'url',
+        colourName: 'React Blue',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-react-blue.png',
       },
       {
         colourName: 'Emerald',
-        colourImage: 'url',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-emerald.png',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 2,
@@ -124,6 +128,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 3,
@@ -183,6 +188,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: true,
   },
   {
     id: 4,
@@ -242,6 +248,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 5,
@@ -301,6 +308,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 6,
@@ -360,6 +368,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 7,
@@ -419,6 +428,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 8,
@@ -478,6 +488,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
 ];
 

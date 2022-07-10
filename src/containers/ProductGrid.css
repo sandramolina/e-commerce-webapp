@@ -5,10 +5,6 @@
   gap: 1rem;
 }
 
-.product-title {
-  margin-top: 5rem;
-}
-
 @media (max-width: 1601px) {
   .products {
     grid-template-columns: repeat(5, 1fr);

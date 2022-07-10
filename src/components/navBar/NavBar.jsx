@@ -24,9 +24,9 @@ import { ReactComponent as ShoppingBag } from '../../images/icons/shoppingbag.sv
 import { ReactComponent as Globe } from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
 import {
-  displayAll,
   displayFaves,
   filterByCategory,
+  displayAll,
 } from '../product/ProductSlice';
 
 import languages from './languages';
