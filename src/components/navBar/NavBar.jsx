@@ -24,9 +24,9 @@ import { ReactComponent as ShoppingBag } from '../../images/icons/shoppingbag.sv
 import { ReactComponent as Globe } from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
 import {
-  displayAll,
   displayFaves,
   filterByCategory,
+  selectAllProducts,
 } from '../product/ProductSlice';
 
 import languages from './languages';
@@ -38,7 +38,7 @@ function NavBar() {
   const handleCategoryClick = (categoryToFilter) => {
     switch (categoryToFilter) {
       case 'ALL':
-        dispatch(displayAll());
+        dispatch(selectAllProducts());
         break;
       case 'FAVES':
         dispatch(displayFaves());
