@@ -8,7 +8,14 @@
   width: 10%;
 }
 
-.dropdown-menu {
+.colour-dd {
   display: flex;
   align-items: flex-start;
+}
+
+.colour-dd-tt {
+  margin: 2%;
+  color: white !important;
+  font-weight: bold;
+  width: 90%;
 }

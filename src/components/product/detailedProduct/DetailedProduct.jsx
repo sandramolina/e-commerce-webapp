@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Carousel, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Carousel, Dropdown } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const DetailedProduct = () => {
     />
   ));
   const colourNodesDropdown = product.colours.map((colour) => (
-    <Dropdown.Item>
+    <Dropdown.Item className='colour-dd'>
       <img
         className='colour-img'
         src={colour.colourImage}
@@ -46,9 +46,10 @@ const DetailedProduct = () => {
         </Carousel.Item>
       </Carousel>
       <section className='colours'>{colourNodes}</section>
-      <DropdownButton id='dropdown-basic-button' title='Select Color' size='sm'>
-        {colourNodesDropdown}
-      </DropdownButton>
+      <Dropdown size='sm'>
+        <Dropdown.Toggle className='colour-dd-tt'>Select Color</Dropdown.Toggle>
+        <Dropdown.Menu>{colourNodesDropdown}</Dropdown.Menu>
+      </Dropdown>
     </>
   );
 };
