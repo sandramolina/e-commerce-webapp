@@ -2,7 +2,7 @@ import { createSlice, createSelector } from '@reduxjs/toolkit';
 
 import products from '../../mock';
 
-const initialState = { products, faves: [] };
+const initialState = { products, faves: [], filteredBy: undefined };
 
 export const productsSlice = createSlice({
   name: 'productsState',
@@ -10,12 +10,10 @@ export const productsSlice = createSlice({
   reducers: {
     displayAll: (state) => {
       state.products = products;
+      state.filteredBy = undefined;
     },
     filterByCategory: (state, action) => {
-      const filteredProducts = products.filter(
-        (product) => product.productCategory === action.payload
-      );
-      state.products = filteredProducts;
+      state.filteredBy = action.payload;
     },
     updateFavourites: ({ faves }, { payload }) => {
       const foundProductIndex = faves.findIndex(
@@ -40,17 +38,17 @@ export const selectByProductId = createSelector(
   (productsList, productId) =>
     productsList.find((product) => product.id === productId)
 );
-
-// Favourite Products
-// export const selectAllFavouriteProducts = createSelector(
-//   [selectAllProducts, (state) => state],
-//   (productsList) => productsList.find((product) => product.isFavourite === true)
-// );
-
-// export const  = (state) => {
-//   const faves = state.products.filter((e) => e.isFavourite === true);
-//   console.log(faves);
-// };
+export const selectByProductFilter = createSelector(
+  [selectAllProducts, (state) => state.filteredBy],
+  (productsList, filteredBy) => {
+    const prod = !filteredBy
+      ? productsList
+      : productsList.filter(
+          (product) => product.productCategory === filteredBy
+        );
+    return prod;
+  }
+);
 
 export const { displayAll, displayFaves, filterByCategory, updateFavourites } =
   productsSlice.actions;

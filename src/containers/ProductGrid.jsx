@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+import { selectByProductFilter } from '../components/product/ProductSlice';
 import Product from '../components/product/Product';
 
 import './ProductGrid.css';
@@ -14,7 +15,10 @@ const ProductGrid = () => {
   }
   const categoryTitle = titleCase(category);
 
-  const productsToShow = useSelector((state) => state.productsState.products);
+  const productsToShow = useSelector((state) =>
+    selectByProductFilter(state.productsState)
+  );
+  // useSelector((state) => state.productsState.products);
   const productNodes = productsToShow.map((product) => (
     <Product product={product} key={product.id} />
   ));
