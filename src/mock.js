@@ -65,6 +65,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 2,
@@ -124,6 +125,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 3,
@@ -183,6 +185,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: true,
   },
   {
     id: 4,
@@ -242,6 +245,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 5,
@@ -301,6 +305,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 6,
@@ -360,6 +365,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 7,
@@ -419,6 +425,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
   {
     id: 8,
@@ -478,6 +485,7 @@ const products = [
         colourImage: 'url',
       },
     ],
+    isFavourite: false,
   },
 ];
 
