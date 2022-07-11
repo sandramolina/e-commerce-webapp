@@ -1,15 +1,36 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
+import {
+  createSlice,
+  createSelector,
+  createAsyncThunk,
+} from '@reduxjs/toolkit';
+import axios from 'axios';
 
-import products from '../../mock';
+export const getProductData = createAsyncThunk(
+  'getProductsData',
+  async (arg, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get('http://localhost:8080/products');
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 
-const initialState = { products, faves: [], filteredBy: undefined };
+const initialState = {
+  products: [],
+  isSuccess: false,
+  message: '',
+  loading: false,
+  faves: [],
+  filteredBy: undefined,
+};
 
 export const productsSlice = createSlice({
   name: 'productsState',
   initialState,
   reducers: {
     displayAll: (state) => {
-      state.products = products;
       state.filteredBy = undefined;
     },
     filterByCategory: (state, action) => {
@@ -29,9 +50,24 @@ export const productsSlice = createSlice({
       state.products = state.faves;
     },
   },
+  extraReducers: {
+    [getProductData.pending]: (state) => {
+      state.loading = true;
+    },
+    [getProductData.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.products = action.payload;
+      state.isSuccess = true;
+    },
+    [getProductData.rejected]: (state, action) => {
+      state.loading = false;
+      state.message = action.payload;
+      state.isSuccess = false;
+    },
+  },
 });
 
-// Products
+// Products Selectors
 export const selectAllProducts = (state) => state.products;
 export const selectByProductId = createSelector(
   [selectAllProducts, (state, productId) => productId],
