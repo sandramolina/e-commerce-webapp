@@ -40,7 +40,7 @@ const Product = ({ product }) => {
             className={isFave ? 'heart-faved' : 'heart'}
             onClick={() => dispatch(updateFavourites(product))}
           />
-          <Nav.Link as={Link} to={`/${product.id}`}>
+          <Nav.Link as={Link} to={`/blahs/${product.id}`}>
             SHOP
           </Nav.Link>
         </Card.Body>

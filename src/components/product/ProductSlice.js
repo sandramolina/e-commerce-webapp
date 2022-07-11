@@ -7,9 +7,9 @@ import axios from 'axios';
 
 export const getProductData = createAsyncThunk(
   'getProductsData',
-  async (arg, { rejectWithValue }) => {
+  async (id, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get('http://localhost:8080/products');
+      const { data } = await axios.get(`http://localhost:8080/products/${id}`);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);

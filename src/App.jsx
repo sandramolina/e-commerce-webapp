@@ -17,7 +17,7 @@ function App() {
   const distpatch = useDispatch();
 
   useEffect(() => {
-    distpatch(getProductData());
+    distpatch(getProductData(''));
   }, []);
 
   return (
@@ -35,8 +35,9 @@ function App() {
           />
           <Route path='products' element={<ProductGrid />}>
             <Route path=':category' element={<ProductGrid />} />
+            {/* <Route path=':id' element={<DetailedProduct />} /> */}
           </Route>
-          <Route path=':id' element={<DetailedProduct />} />
+          <Route path='blahs/:id' element={<DetailedProduct />} />
         </Routes>
         <NavBar />
         <CartModal />
