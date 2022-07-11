@@ -24,6 +24,7 @@ const initialState = {
   loading: false,
   faves: [],
   filteredBy: undefined,
+  isDisplayingFaves: false,
 };
 
 export const productsSlice = createSlice({
@@ -32,9 +33,11 @@ export const productsSlice = createSlice({
   reducers: {
     displayAll: (state) => {
       state.filteredBy = undefined;
+      state.isDisplayingFaves = false;
     },
     filterByCategory: (state, action) => {
       state.filteredBy = action.payload;
+      state.isDisplayingFaves = false;
     },
     updateFavourites: ({ faves }, { payload }) => {
       const foundProductIndex = faves.findIndex(
@@ -47,7 +50,7 @@ export const productsSlice = createSlice({
       }
     },
     displayFaves: (state) => {
-      state.products = state.faves;
+      state.isDisplayingFaves = true;
     },
   },
   extraReducers: {
@@ -75,8 +78,16 @@ export const selectByProductId = createSelector(
     productsList.find((product) => product.id === productId)
 );
 export const selectByProductFilter = createSelector(
-  [selectAllProducts, (state) => state.filteredBy],
-  (productsList, filteredBy) => {
+  [
+    selectAllProducts,
+    (state) => state.filteredBy,
+    (state) => state.isDisplayingFaves,
+    (state) => state.faves,
+  ],
+  (productsList, filteredBy, isDisplayingFaves, faves) => {
+    if (isDisplayingFaves) {
+      return faves;
+    }
     const prod = !filteredBy
       ? productsList
       : productsList.filter(
