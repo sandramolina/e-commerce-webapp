@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
@@ -10,8 +11,15 @@ import Footer from './components/footer/Footer';
 import CartModal from './components/cart/CartModal';
 import ProductGrid from './containers/ProductGrid';
 import DetailedProduct from './components/product/detailedProduct/DetailedProduct';
+import { getProductData } from './components/product/ProductSlice';
 
 function App() {
+  const distpatch = useDispatch();
+
+  useEffect(() => {
+    distpatch(getProductData(''));
+  }, []);
+
   return (
     <div className='App'>
       <Router>
@@ -27,8 +35,9 @@ function App() {
           />
           <Route path='products' element={<ProductGrid />}>
             <Route path=':category' element={<ProductGrid />} />
+            {/* <Route path=':id' element={<DetailedProduct />} /> */}
           </Route>
-          <Route path=':id' element={<DetailedProduct />} />
+          <Route path='blahs/:id' element={<DetailedProduct />} />
         </Routes>
         <NavBar />
         <CartModal />

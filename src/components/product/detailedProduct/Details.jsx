@@ -3,7 +3,7 @@ import React from 'react';
 import { Accordion, Card } from 'react-bootstrap';
 
 const Details = ({ product }) => {
-  const ingredientNodes = product.ingredientsLists.map((ingredient) => (
+  const ingredientNodes = product.ingredients.map((ingredient) => (
     <li>{ingredient.ingredient}</li>
   ));
   return (

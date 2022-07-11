@@ -39,7 +39,7 @@ const products = [
       averageRate: 4.5,
       count: 1500,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Fragrance',
         vegan: true,
@@ -110,7 +110,7 @@ const products = [
       averageRate: 3.5,
       count: 100,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Oil',
         vegan: true,
@@ -170,7 +170,7 @@ const products = [
       averageRate: 3.5,
       count: 100,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Oil',
         vegan: true,
@@ -230,7 +230,7 @@ const products = [
       averageRate: 3.5,
       count: 100,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Oil',
         vegan: true,
@@ -290,7 +290,7 @@ const products = [
       averageRate: 3.5,
       count: 100,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Oil',
         vegan: true,
@@ -350,7 +350,7 @@ const products = [
       averageRate: 3.5,
       count: 100,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Oil',
         vegan: true,
@@ -410,7 +410,7 @@ const products = [
       averageRate: 3.5,
       count: 100,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Oil',
         vegan: true,
@@ -470,7 +470,7 @@ const products = [
       averageRate: 3.5,
       count: 100,
     },
-    ingredientsLists: [
+    ingredients: [
       {
         ingredient: 'Oil',
         vegan: true,
