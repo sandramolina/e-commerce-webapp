@@ -1,3 +1,36 @@
 .footer {
   background-color: #f2a0dc;
 }
+
+.container-top {
+  display: flex;
+  align-items: flex-end;
+  width: 60px;
+  justify-self: end;
+  justify-content: space-evenly;
+}
+
+.top {
+  position: sticky;
+  bottom: 20px;
+  margin-right: 10px;
+
+  /* visual styling */
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+}
+.top:before {
+  content: '';
+  position: absolute;
+  inset: 30%;
+  transform: translateY(20%) rotate(-45deg);
+  border-top: 5px solid #fff;
+  border-right: 5px solid #fff;
+}
+
+@media (min-width: 992px) {
+  .top {
+    width: 1%;
+  }
+}

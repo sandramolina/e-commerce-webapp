@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 import './Footer.css';
 
@@ -8,8 +8,8 @@ const Footer = () => (
   <>
     <Container className='footer' fluid>
       <Row>
-        <Col className='text-center'>
-          <span>🔝</span>
+        <Col className='text-center container-top'>
+          <Button className='top' />
         </Col>
       </Row>
       <Row className='text-center'>
