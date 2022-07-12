@@ -8,6 +8,8 @@ import { clearCart } from './CartItemSlice';
 import CartItem from './CartItem';
 import CheckOutForm from './CheckOutForm';
 
+import './Cart.css';
+
 function Cart() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
@@ -45,7 +47,9 @@ function Cart() {
             {t('total_purchase')} £{totalCart}
           </h3>
           {productsInCart.length !== 0 ? (
-            <Button onClick={handleClick}>Checkout</Button>
+            <Button onClick={handleClick} className='checout-button'>
+              Checkout
+            </Button>
           ) : null}
         </div>
       )}

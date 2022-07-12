@@ -10,6 +10,8 @@ import { removeItemFromCart } from './CartItemSlice';
 const CartItem = ({ productInCart }) => {
   const dispatch = useDispatch();
   const remove = (e) => dispatch(removeItemFromCart(Number(e.target.value)));
+  const countTimesPrice =
+    productInCart.count * productInCart.product.price.amount;
   return (
     <>
       <Card>
@@ -26,10 +28,12 @@ const CartItem = ({ productInCart }) => {
           <Container fluid>
             <Row>
               <Col>
+                Unit Price:
                 {productInCart.product.price.currencyUnit.symbol}{' '}
                 {productInCart.product.price.amount}
               </Col>
             </Row>
+            <hr />
             <Row>
               <Col>
                 <Button variant='primary' size='sm'>
@@ -41,11 +45,20 @@ const CartItem = ({ productInCart }) => {
                 </Button>
               </Col>
               <Col>
-                <button onClick={remove} type='button' value={productInCart.id}>
+                <Button
+                  onClick={remove}
+                  type='button'
+                  value={productInCart.id}
+                  className='remove-button'
+                >
                   Remove
-                </button>
+                </Button>
               </Col>
-              <Col>£PXQ</Col>
+              <Col className='subtotal-text'>
+                Subtotal:
+                {productInCart.product.price.currencyUnit.symbol}
+                {countTimesPrice}
+              </Col>
             </Row>
           </Container>
         </Card.Body>

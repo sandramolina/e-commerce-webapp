@@ -7,3 +7,12 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.subtotal-text {
+  font-weight: bold;
+}
+
+.remove-button {
+  color: white !important;
+  font-weight: bold;
+}
