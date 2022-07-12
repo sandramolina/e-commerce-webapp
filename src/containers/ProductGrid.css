@@ -1,3 +1,6 @@
+.product-grid {
+  margin-top: 40%;
+}
 .products {
   margin: 2rem;
   display: grid;
