@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Facebook, Instagram, Twitch, Twitter } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
 
 import './Footer.css';
@@ -17,8 +18,11 @@ const Footer = () => {
         </Row>
         <Row className='text-center'>
           <Col>
-            <h2>{t('follow')} SO Fetch!</h2>
-            <p>Social media icons</p>
+            <h2 className='social-media'>{t('follow')} SO Fetch!</h2>
+            <Facebook size={35} className='social-media' />
+            <Twitch size={35} className='social-media' />
+            <Twitter size={35} className='social-media' />
+            <Instagram size={35} />
           </Col>
           <hr />
           <Col>
