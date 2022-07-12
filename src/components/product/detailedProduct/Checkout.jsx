@@ -34,8 +34,9 @@ const Checkout = ({ product }) => {
           type='number'
           id='quantity'
           placeholder='1,2..'
-          min='0'
+          min='1'
           max={product.stock}
+          required
         />
         <Button type='submit' size='sm' className='colour-dd-tt'>
           Add to Cart
