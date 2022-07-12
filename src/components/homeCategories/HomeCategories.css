@@ -5,6 +5,7 @@
 
 .category-card {
   display: flex;
+  margin: 2rem;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
