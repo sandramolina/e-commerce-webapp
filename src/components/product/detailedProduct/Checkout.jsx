@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
 import { addItemToCart } from '../../cart/CartItemSlice';
@@ -35,7 +36,9 @@ const Checkout = ({ product }) => {
           <option value='2'>2</option>
           <option value='3'>3</option>
         </select>
-        <input type='submit' value='addToCart' />
+        <Button type='submit' size='sm' className='colour-dd-tt'>
+          Add to Cart
+        </Button>
       </form>
     </div>
   );
