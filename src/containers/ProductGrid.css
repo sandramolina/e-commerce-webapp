@@ -26,6 +26,12 @@
   }
 }
 
+@media (min-width: 992px) {
+  .product-grid {
+    margin-top: 201px;
+  }
+}
+
 /* @media (max-width: 621px) {
   .products {
     grid-template-columns: 2fr;
