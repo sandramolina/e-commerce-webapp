@@ -28,14 +28,15 @@ const Checkout = ({ product }) => {
     <div>
       {' '}
       <form onSubmit={handleFormSubmit}>
-        <select name='count' onChange={handleCountSelection}>
-          <option value='0' defaultValue>
-            -Chose quantity-
-          </option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-        </select>
+        <label htmlFor='quantity'>How many items? </label>
+        <input
+          onChange={handleCountSelection}
+          type='number'
+          id='quantity'
+          placeholder='1,2..'
+          min='0'
+          max={product.stock}
+        />
         <Button type='submit' size='sm' className='colour-dd-tt'>
           Add to Cart
         </Button>
