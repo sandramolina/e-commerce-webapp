@@ -1,5 +1,6 @@
 .category-img {
-  width: 30%;
+  width: 40%;
+  max-height: 115px;
 }
 
 .category-card {
@@ -13,4 +14,10 @@
   color: white;
   font-weight: bold;
   margin-block-end: 0;
+}
+
+@media (min-width: 992px) {
+  .category-img {
+    max-height: 11500px;
+  }
 }

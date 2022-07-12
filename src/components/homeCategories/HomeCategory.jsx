@@ -23,7 +23,7 @@ function HomeCategory({ category }) {
         <Card.Img
           className='category-img'
           alt='Category avatar'
-          src='https://wwd.com/wp-content/uploads/2021/12/best-makeup-kits.jpg?w=911'
+          src={category.imageUrl}
         />
         <Card.Title>{category.string}</Card.Title>
         <Link to={`/products/${category.title.toLowerCase()}`}>
