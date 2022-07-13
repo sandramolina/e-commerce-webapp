@@ -46,6 +46,13 @@ const DetailedProduct = () => {
         <Carousel.Item>
           <img className='d-block w-100' src={product.image} alt='Product' />
         </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src={product.secondSlide}
+            alt='Product'
+          />
+        </Carousel.Item>
       </Carousel>
       <section className='colours'>{colourNodes}</section>
       <Dropdown size='sm'>
