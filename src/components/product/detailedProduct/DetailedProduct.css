@@ -30,3 +30,9 @@
 #quantity {
   margin-left: 1rem;
 }
+
+@media (min-width: 992px) {
+  .detailed-product {
+    margin-top: 201px;
+  }
+}
