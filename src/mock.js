@@ -153,7 +153,7 @@ const products = [
   },
   {
     id: 3,
-    title: 'Super Mascara',
+    title: 'Bad Gal',
     stock: 650,
     price: {
       currencyUnit: {

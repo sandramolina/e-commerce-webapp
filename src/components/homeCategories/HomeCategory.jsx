@@ -25,7 +25,7 @@ function HomeCategory({ category }) {
           alt='Category avatar'
           src={category.imageUrl}
         />
-        <Card.Title>{category.string}</Card.Title>
+        <Card.Title className='category-name'>{category.string}</Card.Title>
         <Link to={`/products/${category.title.toLowerCase()}`}>
           <Button
             className='shop-button-home-categories'
@@ -34,7 +34,7 @@ function HomeCategory({ category }) {
             type='submit'
             onClick={handleClick}
           >
-            <p className='shop-text'>{t('shop')}</p>
+            <p className='shop-text-home-categories'>{t('shop')}</p>
           </Button>
         </Link>
       </Card>
