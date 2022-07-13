@@ -8,6 +8,10 @@
   fill: #8c0f31;
 }
 
+.globe-btn:focus {
+  box-shadow: none !important;
+}
+
 .logo {
   width: 70%;
 }
