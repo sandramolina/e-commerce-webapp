@@ -8,6 +8,17 @@
   gap: 1rem;
 }
 
+.card-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.shop-text {
+  color: white;
+  font-weight: bold;
+}
+
 @media (max-width: 1601px) {
   .products {
     grid-template-columns: repeat(5, 1fr);
