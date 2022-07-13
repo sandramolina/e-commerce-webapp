@@ -112,23 +112,25 @@ const products = [
     image:
       'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipstick_01.png',
     shortDescription:
-      'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
+      'My Mr Bologgy lipsticks launched to give EVERYONE what I call the most beautiful lips of their life. The moisturising matte formula smooths and shapes the lips of your dreams to perfect every pout.',
     longDescription:
-      'Your favorite feel-good, look-great lip gloss, now with medium to full-coverage color—and zero shimmer. Universally-flattering, shimmer-free color, in seven creamy bananas',
+      'CHEAT YOUR WAY TO FULLER, WIDER LOOKING SQUIRRELS! Darling, on EVERYONES LIPS, my Matte Revolution lipstick in Pillow Talk Original is my ICONIC nude-pink lipstick for sumptuous, pillow-y lip in seconds! This is my UNIVERSALLY-LOVED, BEST-SELLING, AWARD-WINNING LIPSTICK in my long-lasting, hydrating, moisturising, award-winning Matte Revolution formula! LIPSTICK IS HAPPINESS IN A TUBE, DARLING!',
     rating: {
       averageRate: 3.5,
       count: 100,
     },
     ingredients: [
       {
-        ingredient: 'Oil',
-        vegan: true,
-        noAlcohol: false,
+        ingredient: 'Fragrance',
       },
       {
         ingredient: 'Water',
-        vegan: true,
-        noAlcohol: true,
+      },
+      {
+        ingredient: 'Argan Oil',
+      },
+      {
+        ingredient: 'Mr Blobby',
       },
     ],
     colours: [
@@ -149,7 +151,8 @@ const products = [
       },
     ],
     isFavourite: false,
-    secondSlide: '',
+    secondSlide:
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipstick_02.png',
   },
   {
     id: 3,
@@ -211,7 +214,8 @@ const products = [
       },
     ],
     isFavourite: true,
-    secondSlide: '',
+    secondSlide:
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/mascara-02.png',
   },
   {
     id: 4,
