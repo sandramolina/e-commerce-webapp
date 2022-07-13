@@ -28,6 +28,7 @@ function HomeCategory({ category }) {
         <Card.Title>{category.string}</Card.Title>
         <Link to={`/products/${category.title.toLowerCase()}`}>
           <Button
+            className='shop-button-home-categories'
             variant='primary'
             size='sm'
             type='submit'
