@@ -143,7 +143,9 @@ function NavBar() {
             >
               {t('faves')}
             </Nav.Link>
-            <Button variant='outline-success'>Sign in/Sign Up</Button>
+            <Button variant='outline-success' id='sign-in-button'>
+              Sign in/Sign Up
+            </Button>
             <Form className='d-flex'>
               <FormControl
                 type='search'

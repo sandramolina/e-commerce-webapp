@@ -20,6 +20,10 @@
   width: 45px;
 }
 
+#sign-in-button {
+  margin-bottom: 1rem;
+}
+
 /* .navbar-subsection {
   display: flex;
   width: 100%;
@@ -29,6 +33,9 @@
 @media (min-width: 992px) {
   #navbarScroll {
     justify-content: space-evenly !important;
+  }
+  #sign-in-button {
+    margin-bottom: 0rem;
   }
   #navbarScroll > button {
     min-width: 140px;
