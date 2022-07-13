@@ -28,7 +28,9 @@ const Checkout = ({ product }) => {
     <div>
       {' '}
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor='quantity'>How many items? </label>
+        <label id='items' htmlFor='quantity'>
+          How many items?
+        </label>
         <input
           onChange={handleCountSelection}
           type='number'
