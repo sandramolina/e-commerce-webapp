@@ -29,7 +29,7 @@ const CheckOutForm = () => {
         onClick={handleSubmitClick}
         className='checout-button'
       >
-        Submit
+        Sign in/Sign up
       </Button>
     </Form>
   );
