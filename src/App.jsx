@@ -35,9 +35,8 @@ function App() {
           />
           <Route path='products' element={<ProductGrid />}>
             <Route path=':category' element={<ProductGrid />} />
-            {/* <Route path=':id' element={<DetailedProduct />} /> */}
           </Route>
-          <Route path='blahs/:id' element={<DetailedProduct />} />
+          <Route path=':id' element={<DetailedProduct />} />
         </Routes>
         <NavBar />
         <CartModal />
