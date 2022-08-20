@@ -1,8 +1,17 @@
+.product-grid {
+  margin-top: 40%;
+}
 .products {
   margin: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 @media (max-width: 1601px) {
@@ -20,6 +29,12 @@
 @media (max-width: 1230px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .product-grid {
+    margin-top: 201px;
   }
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
 import { addItemToCart } from '../../cart/CartItemSlice';
@@ -27,15 +28,21 @@ const Checkout = ({ product }) => {
     <div>
       {' '}
       <form onSubmit={handleFormSubmit}>
-        <select name='count' onChange={handleCountSelection}>
-          <option value='0' defaultValue>
-            -Chose quantity-
-          </option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-        </select>
-        <input type='submit' value='addToCart' />
+        <label id='items' htmlFor='quantity'>
+          How many items?
+        </label>
+        <input
+          onChange={handleCountSelection}
+          type='number'
+          id='quantity'
+          placeholder='1,2..'
+          min='1'
+          max={product.stock}
+          required
+        />
+        <Button type='submit' size='sm' className='colour-dd-tt'>
+          Add to Cart
+        </Button>
       </form>
     </div>
   );

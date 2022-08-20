@@ -23,17 +23,18 @@ function HomeCategory({ category }) {
         <Card.Img
           className='category-img'
           alt='Category avatar'
-          src='https://wwd.com/wp-content/uploads/2021/12/best-makeup-kits.jpg?w=911'
+          src={category.imageUrl}
         />
-        <Card.Title>{category.string}</Card.Title>
+        <Card.Title className='category-name'>{category.string}</Card.Title>
         <Link to={`/products/${category.title.toLowerCase()}`}>
           <Button
+            className='shop-button-home-categories'
             variant='primary'
             size='sm'
             type='submit'
             onClick={handleClick}
           >
-            <p className='shop-text'>{t('shop')}</p>
+            <p className='shop-text-home-categories'>{t('shop')}</p>
           </Button>
         </Link>
       </Card>

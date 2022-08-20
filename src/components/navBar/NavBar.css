@@ -8,6 +8,10 @@
   fill: #8c0f31;
 }
 
+.globe-btn:focus {
+  box-shadow: none !important;
+}
+
 .logo {
   width: 70%;
 }
@@ -20,6 +24,10 @@
   width: 45px;
 }
 
+#sign-in-button {
+  margin-bottom: 1rem;
+}
+
 /* .navbar-subsection {
   display: flex;
   width: 100%;
@@ -30,8 +38,10 @@
   #navbarScroll {
     justify-content: space-evenly !important;
   }
-  #navbarScroll,
-  button {
+  #sign-in-button {
+    margin-bottom: 0rem;
+  }
+  #navbarScroll > button {
     min-width: 140px;
     margin-right: 10px;
   }

@@ -34,10 +34,10 @@ const DetailedProduct = () => {
     </Dropdown.Item>
   ));
   return (
-    <>
+    <div className='detailed-product'>
       <header>
         <h1 className='product-title'>{product.title}</h1>
-        <p>
+        <p className='rating-section'>
           Rating: {product.rating.averageRate}{' '}
           <span className='rate-count'>({product.rating.count})</span>
         </p>
@@ -45,6 +45,13 @@ const DetailedProduct = () => {
       <Carousel>
         <Carousel.Item>
           <img className='d-block w-100' src={product.image} alt='Product' />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src={product.secondSlide}
+            alt='Product'
+          />
         </Carousel.Item>
       </Carousel>
       <section className='colours'>{colourNodes}</section>
@@ -54,7 +61,7 @@ const DetailedProduct = () => {
       </Dropdown>
       <Details product={product} />
       <Checkout product={product} />
-    </>
+    </div>
   );
 };
 export default DetailedProduct;

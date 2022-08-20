@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, Nav } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import '../../css/main.min.css';
@@ -23,7 +23,7 @@ const Product = ({ product }) => {
 
   return (
     <div>
-      <Card style={{ width: '10rem' }}>
+      <Card style={{ width: '10rem', height: '23rem' }}>
         <Card.Img
           alt={`beautiful representation for the product ${product.title}`}
           className='.img-fluid. max-width: 50%'
@@ -36,13 +36,15 @@ const Product = ({ product }) => {
           <Card.Text>
             {product.price.currencyUnit.symbol} {product.price.amount}
           </Card.Text>
-          <Heart
-            className={isFave ? 'heart-faved' : 'heart'}
-            onClick={() => dispatch(updateFavourites(product))}
-          />
-          <Nav.Link as={Link} to={`/blahs/${product.id}`}>
-            SHOP
-          </Nav.Link>
+          <div className='card-bottom'>
+            <Heart
+              className={isFave ? 'heart-faved' : 'heart'}
+              onClick={() => dispatch(updateFavourites(product))}
+            />
+            <Button as={Link} to={`/${product.id}`} className='shop-text'>
+              SHOP
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </div>

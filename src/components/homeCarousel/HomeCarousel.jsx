@@ -2,44 +2,32 @@ import React from 'react';
 
 import { Carousel } from 'react-bootstrap';
 
+import './HomeCarousel.css';
+
 function HomeCarousel() {
   return (
-    <Carousel>
+    <Carousel id='carousel-container'>
       <Carousel.Item>
         <img
           className='d-block w-100'
-          src='https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB30008_FB5001_model_alt5.jpg?v=1656701883'
-          alt='First slide'
+          src='https://images.squarespace-cdn.com/content/v1/5b31a2cb96e76f3354ab0f15/1533762937393-75IK1GB5ENRJ2JKT0U1D/09-15-A1-FSS-in-your-element.jpg?format=2500w'
+          alt='banner influencers showing Eyeshadow palettes'
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
       </Carousel.Item>
-      {/* <Carousel.Item interval={2500}>
+      <Carousel.Item interval={1000}>
         <img
           className='d-block w-100'
-          src='https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB30008_FB5001_model_alt5.jpg?v=1656701883'
-          alt='Second slide'
+          src='https://images.squarespace-cdn.com/content/v1/5b31a2cb96e76f3354ab0f15/1533762909321-0VHY7XWVP3GRN60CVDTX/02-24-A1-SMLS_01a.jpg?format=2500w'
+          alt='Matte lipsticks sale'
         />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={2500}>
+      </Carousel.Item>{' '}
+      <Carousel.Item interval={1000}>
         <img
           className='d-block w-100'
-          src='https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB30008_FB5001_model_alt5.jpg?v=1656701883'
-          alt='Third slide'
+          src='https://images.squarespace-cdn.com/content/v1/5b31a2cb96e76f3354ab0f15/1533762939640-LT78H14KSJBUKXO25C5H/09-20-A1-%2412-Palettes.jpg?format=2500w'
+          alt='Eyeshadows banner'
         />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
+      </Carousel.Item>
     </Carousel>
   );
 }

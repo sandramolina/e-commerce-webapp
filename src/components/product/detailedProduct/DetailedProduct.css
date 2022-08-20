@@ -1,3 +1,6 @@
+.rating-section {
+  margin-left: 1rem;
+}
 .rate-count {
   font-weight: bold;
   color: blueviolet;
@@ -18,4 +21,23 @@
   color: white !important;
   font-weight: bold;
   width: 90%;
+}
+
+.detailed-product {
+  margin-top: 40%;
+}
+
+#quantity {
+  margin-left: 1rem;
+}
+
+#items {
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  .detailed-product {
+    margin-top: 201px;
+  }
 }

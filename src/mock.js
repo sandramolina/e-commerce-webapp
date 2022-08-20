@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    title: 'Super Lip Gloss',
+    title: 'Lip Glossy',
     stock: 550,
     price: {
       currencyUnit: {
@@ -34,7 +34,7 @@ const products = [
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
-      'Your favorite feel-good, look-great lip gloss, now with medium to full-coverage color—and zero shimmer. Universally-flattering, shimmer-free color, in seven creamy shades',
+      'Your favorite feel-good, look-great lip gloss, now with medium to full-coverage color—and zero shimmer. Universally-flattering, shimmer-free color, in four creamy squirrels',
     rating: {
       averageRate: 4.5,
       count: 1500,
@@ -42,13 +42,15 @@ const products = [
     ingredients: [
       {
         ingredient: 'Fragrance',
-        vegan: true,
-        noAlcohol: true,
       },
       {
         ingredient: 'Water',
-        vegan: true,
-        noAlcohol: true,
+      },
+      {
+        ingredient: 'Argan Oil',
+      },
+      {
+        ingredient: 'Mr Blobby',
       },
     ],
     colours: [
@@ -58,9 +60,14 @@ const products = [
           'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-red.png',
       },
       {
-        colourName: 'React Blue',
+        colourName: 'Hot Pink',
         colourImage:
-          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-react-blue.png',
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-hot-pink.png',
+      },
+      {
+        colourName: 'Get Nude',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-getnude.png',
       },
       {
         colourName: 'Emerald',
@@ -69,10 +76,12 @@ const products = [
       },
     ],
     isFavourite: false,
+    secondSlide:
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipBalm-02.png',
   },
   {
     id: 2,
-    title: 'Super Lip Gloss STAR',
+    title: 'Mr Bloggy',
     stock: 650,
     price: {
       currencyUnit: {
@@ -101,38 +110,53 @@ const products = [
     },
     productCategory: 'LIPS',
     image:
-      'https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB_HOL2021_I_T2PRODUCT_CONCRETE_GLOSS_BOMB_HEAT_CLOSED_LAVENDER_SAVAGE_1200x1500_d9cf3fcb-3888-4bf9-8ce8-a333017a95cc.jpg?v=1646689585',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipstick_01.png',
     shortDescription:
-      'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
+      'My Mr Bologgy lipsticks launched to give EVERYONE what I call the most beautiful lips of their life. The moisturising matte formula smooths and shapes the lips of your dreams to perfect every pout.',
     longDescription:
-      'Your favorite feel-good, look-great lip gloss, now with medium to full-coverage color—and zero shimmer. Universally-flattering, shimmer-free color, in seven creamy shades',
+      'CHEAT YOUR WAY TO FULLER, WIDER LOOKING SQUIRRELS! Darling, on EVERYONES LIPS, my Matte Revolution lipstick in Pillow Talk Original is my ICONIC nude-pink lipstick for sumptuous, pillow-y lip in seconds! This is my UNIVERSALLY-LOVED, BEST-SELLING, AWARD-WINNING LIPSTICK in my long-lasting, hydrating, moisturising, award-winning Matte Revolution formula! LIPSTICK IS HAPPINESS IN A TUBE, DARLING!',
     rating: {
       averageRate: 3.5,
       count: 100,
     },
     ingredients: [
       {
-        ingredient: 'Oil',
-        vegan: true,
-        noAlcohol: false,
+        ingredient: 'Fragrance',
       },
       {
         ingredient: 'Water',
-        vegan: true,
-        noAlcohol: true,
+      },
+      {
+        ingredient: 'Argan Oil',
+      },
+      {
+        ingredient: 'Mr Blobby',
       },
     ],
     colours: [
       {
-        colourName: 'Passion Red',
-        colourImage: 'url',
+        colourName: 'Hot Pink',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-hot-pink.png',
+      },
+      {
+        colourName: 'Get Nude',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-getnude.png',
+      },
+      {
+        colourName: 'Rosy Maeve',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-rosy-maeve.png',
       },
     ],
     isFavourite: false,
+    secondSlide:
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/lipstick_02.png',
   },
   {
     id: 3,
-    title: 'Super Mascara',
+    title: 'Bad Gal',
     stock: 650,
     price: {
       currencyUnit: {
@@ -185,14 +209,17 @@ const products = [
     colours: [
       {
         colourName: 'Passion Red',
-        colourImage: 'url',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-red.png',
       },
     ],
     isFavourite: true,
+    secondSlide:
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/mascara-02.png',
   },
   {
     id: 4,
-    title: 'The Foundation',
+    title: 'mOist',
     stock: 650,
     price: {
       currencyUnit: {
@@ -221,7 +248,7 @@ const products = [
     },
     productCategory: 'FACE',
     image:
-      'https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB_HOL2021_I_T2PRODUCT_CONCRETE_GLOSS_BOMB_HEAT_CLOSED_LAVENDER_SAVAGE_1200x1500_d9cf3fcb-3888-4bf9-8ce8-a333017a95cc.jpg?v=1646689585',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/foundation-01.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
@@ -245,14 +272,16 @@ const products = [
     colours: [
       {
         colourName: 'Passion Red',
-        colourImage: 'url',
+        colourImage:
+          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-red.png',
       },
     ],
     isFavourite: false,
+    secondSlide: '',
   },
   {
     id: 5,
-    title: 'HEY HEY',
+    title: 'HEY Shine',
     stock: 650,
     price: {
       currencyUnit: {
@@ -281,7 +310,7 @@ const products = [
     },
     productCategory: 'NAILS',
     image:
-      'https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB_HOL2021_I_T2PRODUCT_CONCRETE_GLOSS_BOMB_HEAT_CLOSED_LAVENDER_SAVAGE_1200x1500_d9cf3fcb-3888-4bf9-8ce8-a333017a95cc.jpg?v=1646689585',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/nails-01.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
@@ -309,10 +338,11 @@ const products = [
       },
     ],
     isFavourite: false,
+    secondSlide: '',
   },
   {
     id: 6,
-    title: 'Eyeshadow Milenium',
+    title: 'Aye Mascara',
     stock: 1650,
     price: {
       currencyUnit: {
@@ -341,7 +371,7 @@ const products = [
     },
     productCategory: 'EYES',
     image:
-      'https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB_HOL2021_I_T2PRODUCT_CONCRETE_GLOSS_BOMB_HEAT_CLOSED_LAVENDER_SAVAGE_1200x1500_d9cf3fcb-3888-4bf9-8ce8-a333017a95cc.jpg?v=1646689585',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/mascara-b.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
@@ -369,10 +399,11 @@ const products = [
       },
     ],
     isFavourite: false,
+    secondSlide: '',
   },
   {
     id: 7,
-    title: 'HEY HEY',
+    title: 'Sparkly!',
     stock: 650,
     price: {
       currencyUnit: {
@@ -401,7 +432,7 @@ const products = [
     },
     productCategory: 'NAILS',
     image:
-      'https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB_HOL2021_I_T2PRODUCT_CONCRETE_GLOSS_BOMB_HEAT_CLOSED_LAVENDER_SAVAGE_1200x1500_d9cf3fcb-3888-4bf9-8ce8-a333017a95cc.jpg?v=1646689585',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/nails-02.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
@@ -429,10 +460,11 @@ const products = [
       },
     ],
     isFavourite: false,
+    secondSlide: '',
   },
   {
     id: 8,
-    title: 'HEY YOUUUUUU',
+    title: 'Hello Holo',
     stock: 650,
     price: {
       currencyUnit: {
@@ -461,7 +493,7 @@ const products = [
     },
     productCategory: 'NAILS',
     image:
-      'https://cdn.shopify.com/s/files/1/0341/3458/9485/products/FB_HOL2021_I_T2PRODUCT_CONCRETE_GLOSS_BOMB_HEAT_CLOSED_LAVENDER_SAVAGE_1200x1500_d9cf3fcb-3888-4bf9-8ce8-a333017a95cc.jpg?v=1646689585',
+      'https://raw.githubusercontent.com/sandramolina/assets/main/products/nails-03.png',
     shortDescription:
       'Our #1 gloss—now with pure, creamy color and incredible shine. Lips are instantly smoother and more voluminous-looking.',
     longDescription:
@@ -489,6 +521,7 @@ const products = [
       },
     ],
     isFavourite: false,
+    secondSlide: '',
   },
 ];
 

@@ -1,0 +1,9 @@
+#carousel-container {
+  margin-top: 34%;
+}
+
+@media (min-width: 992px) {
+  #carousel-container {
+    margin-top: 201px;
+  }
+}
