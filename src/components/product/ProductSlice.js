@@ -22,9 +22,7 @@ const initialState = {
   isSuccess: false,
   message: '',
   loading: false,
-  faves: [],
   filteredBy: undefined,
-  isDisplayingFaves: false,
 };
 
 export const productsSlice = createSlice({
@@ -33,24 +31,9 @@ export const productsSlice = createSlice({
   reducers: {
     displayAll: (state) => {
       state.filteredBy = undefined;
-      state.isDisplayingFaves = false;
     },
     filterByCategory: (state, action) => {
       state.filteredBy = action.payload;
-      state.isDisplayingFaves = false;
-    },
-    updateFavourites: ({ faves }, { payload }) => {
-      const foundProductIndex = faves.findIndex(
-        (fave) => fave.id === payload.id
-      );
-      if (foundProductIndex === -1) {
-        faves.push(payload);
-      } else {
-        faves.splice(foundProductIndex, 1);
-      }
-    },
-    displayFaves: (state) => {
-      state.isDisplayingFaves = true;
     },
   },
   extraReducers: {
@@ -72,22 +55,16 @@ export const productsSlice = createSlice({
 
 // Products Selectors
 export const selectAllProducts = (state) => state.products;
+
 export const selectByProductId = createSelector(
   [selectAllProducts, (state, productId) => productId],
   (productsList, productId) =>
     productsList.find((product) => product.id === productId)
 );
+
 export const selectByProductFilter = createSelector(
-  [
-    selectAllProducts,
-    (state) => state.filteredBy,
-    (state) => state.isDisplayingFaves,
-    (state) => state.faves,
-  ],
-  (productsList, filteredBy, isDisplayingFaves, faves) => {
-    if (isDisplayingFaves) {
-      return faves;
-    }
+  [selectAllProducts, (state) => state.filteredBy],
+  (productsList, filteredBy) => {
     const prod = !filteredBy
       ? productsList
       : productsList.filter(
@@ -97,6 +74,5 @@ export const selectByProductFilter = createSelector(
   }
 );
 
-export const { displayAll, displayFaves, filterByCategory, updateFavourites } =
-  productsSlice.actions;
+export const { displayAll, filterByCategory } = productsSlice.actions;
 export default productsSlice.reducer;
