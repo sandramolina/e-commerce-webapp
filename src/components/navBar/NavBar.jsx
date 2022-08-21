@@ -23,11 +23,7 @@ import './NavBar.css';
 import { ReactComponent as ShoppingBag } from '../../images/icons/shoppingbag.svg';
 import { ReactComponent as Globe } from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
-import {
-  displayFaves,
-  filterByCategory,
-  displayAll,
-} from '../product/ProductSlice';
+import { filterByCategory, displayAll } from '../product/ProductSlice';
 
 import languages from './languages';
 
@@ -39,9 +35,6 @@ function NavBar() {
     switch (categoryToFilter) {
       case 'ALL':
         dispatch(displayAll());
-        break;
-      case 'FAVES':
-        dispatch(displayFaves());
         break;
       default:
         dispatch(filterByCategory(categoryToFilter));
@@ -137,9 +130,9 @@ function NavBar() {
             </NavDropdown>
             <Nav.Link href='WT'>{t('whats_trending')}</Nav.Link>
             <Nav.Link
-              as={Link}
-              to='/products/faves'
-              onClick={() => handleCategoryClick('FAVES')}
+            // as={Link}
+            // to='/products/faves'
+            // onClick={() => handleCategoryClick('FAVES')}
             >
               {t('faves')}
             </Nav.Link>
