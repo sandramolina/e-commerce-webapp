@@ -22,7 +22,6 @@ const initialState = {
   isSuccess: false,
   message: '',
   loading: false,
-  filteredBy: undefined,
 };
 
 export const productsSlice = createSlice({
@@ -52,18 +51,6 @@ export const selectByProductId = createSelector(
   [selectAllProducts, (state, productId) => productId],
   (productsList, productId) =>
     productsList.find((product) => product.id === productId)
-);
-
-export const selectByProductFilter = createSelector(
-  [selectAllProducts, (state) => state.filteredBy],
-  (productsList, filteredBy) => {
-    const prod = !filteredBy
-      ? productsList
-      : productsList.filter(
-          (product) => product.productCategory === filteredBy
-        );
-    return prod;
-  }
 );
 
 export default productsSlice.reducer;
