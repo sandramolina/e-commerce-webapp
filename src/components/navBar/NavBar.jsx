@@ -23,7 +23,7 @@ import './NavBar.css';
 import { ReactComponent as ShoppingBag } from '../../images/icons/shoppingbag.svg';
 import { ReactComponent as Globe } from '../../images/icons/globe.svg';
 import { openCart } from '../cart/CartModalSlice';
-import { filterByCategory, displayAll } from '../product/ProductSlice';
+// import { filterByCategory, displayAll } from '../product/ProductSlice';
 
 import languages from './languages';
 
@@ -31,15 +31,15 @@ function NavBar() {
   const dispatch = useDispatch();
   const clickOnCart = () => dispatch(openCart());
 
-  const handleCategoryClick = (categoryToFilter) => {
-    switch (categoryToFilter) {
-      case 'ALL':
-        dispatch(displayAll());
-        break;
-      default:
-        dispatch(filterByCategory(categoryToFilter));
-    }
-  };
+  // const handleCategoryClick = (categoryToFilter) => {
+  //   switch (categoryToFilter) {
+  //     case 'ALL':
+  //       dispatch(displayAll());
+  //       break;
+  //     default:
+  //       dispatch(filterByCategory(categoryToFilter));
+  //   }
+  // };
 
   const { t } = useTranslation();
 
@@ -84,45 +84,45 @@ function NavBar() {
             <NavDropdown title={t('products')} id='navbarScrollingDropdown'>
               <NavItem>
                 <Nav.Link
-                  as={Link}
-                  to='/products/all'
-                  onClick={() => handleCategoryClick('ALL')}
+                // as={Link}
+                // to='/products/all'
+                // onClick={() => handleCategoryClick('ALL')}
                 >
                   {t('all')}
                 </Nav.Link>
               </NavItem>
               <NavItem>
                 <Nav.Link
-                  as={Link}
-                  to='/products/eyes'
-                  onClick={() => handleCategoryClick('EYES')}
+                // as={Link}
+                // to='/products/eyes'
+                // onClick={() => handleCategoryClick('EYES')}
                 >
                   {t('eyes')}
                 </Nav.Link>
               </NavItem>
               <NavItem>
                 <Nav.Link
-                  as={Link}
-                  to='/products/face'
-                  onClick={() => handleCategoryClick('FACE')}
+                // as={Link}
+                // to='/products/face'
+                // onClick={() => handleCategoryClick('FACE')}
                 >
                   {t('face')}
                 </Nav.Link>
               </NavItem>
               <NavItem>
                 <Nav.Link
-                  as={Link}
-                  to='/products/lips'
-                  onClick={() => handleCategoryClick('LIPS')}
+                // as={Link}
+                // to='/products/lips'
+                // onClick={() => handleCategoryClick('LIPS')}
                 >
                   {t('lips')}
                 </Nav.Link>
               </NavItem>
               <NavItem>
                 <Nav.Link
-                  as={Link}
-                  to='/products/nails'
-                  onClick={() => handleCategoryClick('NAILS')}
+                // as={Link}
+                // to='/products/nails'
+                // onClick={() => handleCategoryClick('NAILS')}
                 >
                   {t('nails')}
                 </Nav.Link>
