@@ -1,21 +1,21 @@
 import React from 'react';
 
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { filterByCategory } from '../product/ProductSlice';
+// import { filterByCategory } from '../product/ProductSlice';
 
 import './HomeCategories.css';
 
 function HomeCategory({ category }) {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(filterByCategory(category.title));
-  };
+  // const handleClick = () => {
+  //   dispatch(filterByCategory(category.title));
+  // };
 
   return (
     <div>
@@ -32,7 +32,7 @@ function HomeCategory({ category }) {
             variant='primary'
             size='sm'
             type='submit'
-            onClick={handleClick}
+            // onClick={handleClick}
           >
             <p className='shop-text-home-categories'>{t('shop')}</p>
           </Button>
