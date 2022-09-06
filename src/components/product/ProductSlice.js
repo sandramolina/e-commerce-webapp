@@ -22,20 +22,11 @@ const initialState = {
   isSuccess: false,
   message: '',
   loading: false,
-  filteredBy: undefined,
 };
 
 export const productsSlice = createSlice({
   name: 'productsState',
   initialState,
-  reducers: {
-    displayAll: (state) => {
-      state.filteredBy = undefined;
-    },
-    filterByCategory: (state, action) => {
-      state.filteredBy = action.payload;
-    },
-  },
   extraReducers: {
     [getProductData.pending]: (state) => {
       state.loading = true;
@@ -62,17 +53,4 @@ export const selectByProductId = createSelector(
     productsList.find((product) => product.id === productId)
 );
 
-export const selectByProductFilter = createSelector(
-  [selectAllProducts, (state) => state.filteredBy],
-  (productsList, filteredBy) => {
-    const prod = !filteredBy
-      ? productsList
-      : productsList.filter(
-          (product) => product.productCategory === filteredBy
-        );
-    return prod;
-  }
-);
-
-export const { displayAll, filterByCategory } = productsSlice.actions;
 export default productsSlice.reducer;
